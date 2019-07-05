@@ -1,0 +1,13 @@
+#process_content{
+    z-index: 999;
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    font-family: 'ZCOOL KuaiLe', cursive;
+    color:black;
+    background-color: #F8ECC2;
+    display: flex;
+    align-items: center;
+
+}

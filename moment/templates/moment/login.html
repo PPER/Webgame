@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>PIGEON</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+  <!-- jsdelivr cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/vee-validate@latest/dist/vee-validate.js"></script>
+    <style type="text/css">
+      @import url("/static/moment/style/dashed_button.css");
+      @import url("/static/moment/style/login.css");
+  </style>
+  <!--跳转到主页面func-->
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+      <audio autoplay="autoplay" loop="loop" >
+          <source src="/static/moment/audio/back.mp3"  type="audio/mp3" />
+        </audio>
+    <div class="cont">
+      <div class="form sign-in" id="sign_in_div">
+        <div style=" color: #E65540;text-align: center; height: 25px;" id="login_hint"></div>
+        <h2>欢迎回来</h2>
+        <label>
+          <span>用户名</span>
+          <div class="error_hint" id="sign_in_username_error" style=" color: #E65540;"></div>
+          <input key="unique" type="text"  v-validate="'required|alpha_dash|max:150'" data-vv-scope="sign_in"  name="username_in" id="sign_in_username"/>
+        </label>
+        <label>
+          <span>密码</span>
+          <div class="error_hint" id="sign_in_password_error" style=" color: #E65540;"></div>
+          <input key="unique" type="password" name="password_in" v-validate="'required|alpha_dash|max:150'" data-vv-scope="sign_in" id="sign_in_password"/>
+        </label>
+        <div style="align-items: center; display: block; margin-top:5rem;">
+        <section style="justify-content: center; ">
+        <button  class='lined thin'id="login_btn" v-on:click="onSignIn" >登陆</button>
+        <button  class='lined thin'>忘记密码</button>
+    </section> 
+    </div> 
+    </div>
+      <div class="sub-cont">
+        <div class="img">
+          <div class="img__text m--up">
+            <h2>新的玩家?</h2>
+            <p>欢迎注册加入游戏</p>
+          </div>
+          <div class="img__text m--in">
+            <h2>已经注册？</h2>
+            <p>如果你已是玩家，请点击登陆继续您的旅程喵/w/</p>
+          </div>
+          <div class="img__btn">
+            <span class="m--up">注册</span>
+            <span class="m--in">登陆</span>
+          </div>
+        </div>
+        <div class="form sign-up" id="sign_up_div">
+            <div style=" color: #E65540;text-align: center;height: 25px;" id="invite_code_hint"></div>
+          <h2>啦啦啦啦</h2>
+          <label>        
+            <span>用户名</span> 
+            <div class="error_hint" id="sign_up_username_error" >可包含阿拉伯数字，大小写字母，下划线；长度不超过150个字符。</div>
+            <input key="unique" type="text" name="username_up" v-validate="'required|alpha_dash|max:150'" data-vv-scope="sign_up" id="sign_up_username" />           
+          </label>
+          <label>
+            <span>邮箱</span>
+            <div class="error_hint" id="sign_up_email_error">将用于找回密码</div>
+            <input key="unique" type="email"  v-validate="'required|email'" data-vv-scope="sign_up" name="email_up" id="sign_up_email"/>
+          </label>
+          <label>
+            <span>密码</span>
+            <div class="error_hint" id="sign_up_password_error">可包含阿拉伯数字，大小写字母，下划线；长度不超过20个字符。</div>
+            <input key="unique" type="password" name="password_up" v-validate="'required|alpha_dash|max:20'" data-vv-scope="sign_up" id="sign_up_password" />
+          </label>
+          <div style="align-items: center; display: block; margin: 0 auto;">
+                <section style="justify-content: center; margin-top: 2rem">
+                  <span class="invite_wrapper">
+                    <span class="invite_title">邀请码</span> 
+                    <input id="invite_code" placeholder="点击输入"  type="text" name="invite_code" />  
+                  </span> 
+                <button type="submit" class='lined thin' v-on:click="onSignUp">注册并登陆</button>
+            </section> 
+            </div> 
+        </div>
+      </div>
+    </div>
+    
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/moment/script/login.js"></script>
+  </body>
+</html>
+ 
+
+
+

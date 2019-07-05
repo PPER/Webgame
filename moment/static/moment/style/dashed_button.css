@@ -1,0 +1,86 @@
+@import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
+@import url(https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe);
+* {
+  box-sizing: border-box;
+}
+
+/*  background: #f0f0d8; */
+
+html section,
+body section {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 100%;
+  min-height: 100%;
+  margin-bottom: 2rem;
+}
+html section button,
+body section button {
+  font-family: 'ZCOOL KuaiLe', cursive;
+  align-self: left;
+  background:#65A8A6;
+  padding: 0.5rem 0.5rem;
+  margin: 0 1rem;
+  font-weight: bolder;
+  transition: all 0.5s ease;
+  color: #F8ECC2;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  font-weight:900; 
+  outline: none;
+  box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  /*
+  Above is shorthand for:
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  border-bottom-right-radius: 225px 15px;
+  border-bottom-left-radius:15px 255px;
+  */
+}
+html section button:hover,
+body section button:hover {
+  box-shadow: 2px 8px 4px -6px rgba(0, 0, 0, 0.3);
+  color: #E65540;
+}
+html section button.lined.thick,
+body section button.lined.thick {
+  border: solid 7px #41403e;
+}
+html section button.dotted.thick,
+body section button.dotted.thick {
+  border: dotted 5px #141414;
+}
+html section button.dashed.thick,
+body section button.dashed.thick {
+  border: dashed 5px #141414;
+}
+html section button.lined.thin,
+body section button.lined.thin {
+  border: solid 2px #141414;
+}
+html section button.dotted.thin,
+body section button.dotted.thin {
+  border: dotted 2px #141414;
+}
+html section button.dashed.thin,
+body section button.dashed.thin {
+  border: dashed 2px #141414;
+}
+
+@media (max-width: 620px) {
+  body h1 {
+    margin-top: 1rem;
+  }
+  body section {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin-bottom: 1rem;
+  }
+  body section button {
+    align-self: left;
+    margin-bottom: 1rem;
+  }
+}

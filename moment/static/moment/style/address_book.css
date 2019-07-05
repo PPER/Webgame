@@ -1,0 +1,217 @@
+
+#chat_window_cross a{
+    cursor: pointer;
+    position: absolute;
+    margin: 0 auto;
+    color: rgb(255, 135, 117);
+    }
+    #chat_window_cross a:hover{
+        color: rgb(255, 135, 117);
+      }
+  .phone_chat {
+    background: #F8ECC2;
+    width: 300px;
+    margin: 0 auto;
+    display: none;
+    top: 20%;
+    right: 5%;
+    position: fixed;
+  }
+  .phone_chat header {
+    background: #65A8A6;
+    padding: 10px 15px;
+    color: #F8ECC2;
+    font-size: 2.5rem;
+    cursor: move;
+  }
+  .phone_chat header:before,
+  .phone_chat header:after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+  .phone_chat header h2,
+  .phone_chat .body ul li .content h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #000000;
+    float: left;
+  }
+  .phone_chat .body ul li{
+    cursor: pointer;
+  }
+  .phone_chat header h2 a {
+    color: #F8ECC2;
+    text-decoration: none;
+    font-size: 2.5rem;
+  }
+  .phone_chat header .tools {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+  }
+  .phone_chat header .tools li {
+    display: inline-block;
+    margin-right: 6px;
+  }
+  .phone_chat header .tools li:last-child {
+    margin: 0;
+  }
+  .phone_chat header .tools li a {
+    color: #F8ECC2;
+    text-decoration: none;
+    -webkit-transition: all 0.3s linear 0s;
+    -moz-transition: all 0.3s linear 0s;
+    -ms-transition: all 0.3s linear 0s;
+    -o-transition: all 0.3s linear 0s;
+    transition: all 0.3s linear 0s;
+  }
+  .phone_chat .body {
+    position: relative;
+    max-height: 360px;
+    overflow-y: scroll;
+  }
+  .phone_chat .body .search {
+    display: none;
+    width: 100%;
+  }
+  .phone_chat .body .search.opened {
+    display: block;
+  }
+  .phone_chat .body .search input {
+    width: 100%;
+    margin: 0;
+    padding: 10px 15px;
+    border: none;
+    -webkti-box-size: border-box;
+    -moz-box-size: border-box;
+    box-size: border-box;
+  }
+  .phone_chat .body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #f2f2f2;
+  }
+  .phone_chat .body ul li {
+    position: relative;
+    background: #F8ECC2;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .phone_chat .body ul li:before,
+  .phone_chat .body ul li:after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+  .phone_chat .body ul li:hover .thumbnail {
+    background: #65A8A6;
+  }
+  .phone_chat .body ul li:nth-child(2n) {
+    background: #fdfbf1;
+  }
+  .phone_chat .body ul li .thumbnail {
+    display: inline-block;
+    font-weight: bold;
+    background: rgb(255, 135, 117);
+    width: 50px;
+    color: #F8ECC2;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-transition: background 0.3s linear 0s;
+    -moz-transition: background 0.3s linear 0s;
+    -ms-transition: background 0.3s linear 0s;
+    -o-transition: background 0.3s linear 0s;
+    transition: background 0.3s linear 0s;
+  }
+  .phone_chat .body ul li .thumbnail img {
+    width: 100%;
+  }
+  .phone_chat .body ul li .content {
+    display: inline-block;
+    margin-left: 6px;
+    vertical-align: top;
+    line-height: 1;
+  }
+  .phone_chat .body ul li .content h3 {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    color: #808080;
+  }
+  .phone_chat .body ul li .content .preview {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 5px;
+    color: #635f5f;
+    font-size: 12px;
+  }
+  .phone_chat .body ul li .content .meta {
+    color: #5e5c5c;
+    font-size: 12px;
+  }
+  .phone_chat .body ul li .content .meta a {
+    color: #999999;
+    text-decoration: none;
+  }
+  .phone_chat .body ul li .content .meta a:hover {
+    text-decoration: underline;
+  }
+  .phone_chat .body ul li .message {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .phone_chat footer a {
+    background: #65A8A6;
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    color: #F8ECC2;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-size: 2.5rem;
+  }
+  .info {
+    width: 300px;
+    margin: 25px auto;
+    text-align: center;
+  }
+  .info h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    font-weight: 400;
+    color: #333333;
+  }
+  .info span {
+    color: #666666;
+    font-size: 12px;
+  }
+  .info span a {
+    color: #000000;
+    text-decoration: none;
+  }
+  .info span .fa {
+    color: #65A8A6;
+  }
+  .info span .spoilers {
+    color: #999999;
+    margin-top: 5px;
+    font-size: 10px;
+  }

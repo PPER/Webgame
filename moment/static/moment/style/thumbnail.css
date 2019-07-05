@@ -1,0 +1,201 @@
+
+  .pic_card {
+    max-width: 900px;
+    margin: 50px auto 0;
+  }
+  
+  .card {
+    float: left;
+    padding: 0 1.7rem;
+    width: 50%;
+  }
+ 
+  .card .pic_card_wrapper {
+    background-color: #fff;
+    min-height: 540px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
+  }
+  .card .pic_card_wrapper:hover .pic_card_data {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .card .pic_card_data {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    -webkit-transform: translateY(calc(70px + 1em));
+            transform: translateY(calc(70px + 1em));
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+  }
+  .card .pic_card_data .pic_card_content {
+    padding: 1em;
+    position: relative;
+    z-index: 1;
+  }
+  .card .pic_card_author {
+    font-size: 3rem;
+  }
+  .card .pic_card_title {
+    margin-top: 2rem;
+    font-size: 2rem;
+  }
+  .card .pic_card_text {
+    height: 70px;
+    margin: 0;
+
+  }
+  .card input[type='checkbox'] {
+    display: none;
+  }
+  .card input[type='checkbox']:checked + .pic_card_menu-content {
+    -webkit-transform: translateY(-60px);
+            transform: translateY(-60px);
+  }
+  
+  .pic_card_example-1 .pic_card_wrapper {
+    background:url(/static/moment/image/pic/back.jpg) 20% 1%/cover no-repeat;
+  }
+  .pic_card_example-1 .pic_card_date {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #d1d198;
+    color: #fff;
+    padding: 0.8em;
+  }
+  .pic_card_example-1 .pic_card_date span {
+    display: block;
+    text-align: center;
+  }
+  .pic_card_example-1 .pic_card_date .pic_card_day {
+    font-weight: 700;
+    font-size: 24px;
+    text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.18);
+  }
+  .pic_card_example-1 .pic_card_date .pic_card_month {
+    text-transform: uppercase;
+  }
+  .pic_card_example-1 .pic_card_date .pic_card_month,
+  .pic_card_example-1 .pic_card_date .pic_card_year {
+    font-size: 12px;
+  }
+  .pic_card_example-1 .pic_card_content {
+    background-color: #fff;
+    box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.3);
+  }
+  .pic_card_example-1 .pic_card_title a {
+    color: gray;
+  }
+  .pic_card_example-1 .pic_card_menu-button {
+    position: absolute;
+    z-index: 999;
+    top: 16px;
+    right: 16px;
+    width: 25px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .pic_card_example-1 .pic_card_menu-button span {
+    width: 5px;
+    height: 5px;
+    background-color: gray;
+    color: gray;
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+  }
+  .pic_card_example-1 .pic_card_menu-button span::after, .pic_card_example-1 .pic_card_menu-button span::before {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 5px;
+    background-color: currentColor;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .pic_card_example-1 .pic_card_menu-button span::before {
+    left: -10px;
+  }
+  .pic_card_example-1 .pic_card_menu-button span::after {
+    right: -10px;
+  }
+  .pic_card_example-1 .pic_card_menu-content {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .pic_card_example-1 .pic_card_menu-content li {
+    width: 33.333333%;
+    float: left;
+    background-color: #77d7b9;
+    height: 60px;
+    position: relative;
+  }
+  .pic_card_example-1 .pic_card_menu-content a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    font-size: 24px;
+  }
+  .pic_card_example-1 .pic_card_menu-content span {
+    top: -10px;
+  }
+  
+  .pic_card_example-2 .pic_card_wrapper {
+    background: url(https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg) center/cover no-repeat;
+  }
+  .pic_card_example-2 .pic_card_wrapper:hover .pic_card_menu-content span {
+    -webkit-transform: translate(-50%, -10px);
+            transform: translate(-50%, -10px);
+    opacity: 1;
+  }
+  .pic_card_example-2 .pic_card_header {
+    color: #fff;
+    padding: 1em;
+  }
+  .pic_card_example-2 .pic_card_header::before, .pic_card_example-2 .pic_card_header::after {
+    content: '';
+    display: table;
+  }
+  .pic_card_example-2 .pic_card_header::after {
+    clear: both;
+  }
+  .pic_card_example-2 .pic_card_header .pic_card_date {
+    float: left;
+    font-size: 12px;
+  }
+  .pic_card_example-2 .pic_card_menu-content {
+    float: right;
+  }
+  .pic_card_example-2 .pic_card_menu-content li {
+    margin: 0 5px;
+    position: relative;
+  }
+  .pic_card_example-2 .pic_card_menu-content span {
+    transition: all 0.3s;
+    opacity: 0;
+  }
+  .pic_card_example-2 .pic_card_data {
+    color: #fff;
+    -webkit-transform: translateY(calc(70px + 4em));
+            transform: translateY(calc(70px + 4em));
+  }
+  .pic_card_example-2 .pic_card_title a {
+    color: #fff;
+  }
+
+  

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Pigeon</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+      @import url("/static/moment/style/dashed_button.css");
+      @import url("/static/moment/style/background.css");
+      @import url("/static/moment/style/part.css");
+  </style>
+  <!--跳转到主页面func-->
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+      <audio autoplay="autoplay" loop="loop" >
+          <source src="/static/moment/audio/SecretBase.mp3"  type="audio/mp3" />
+        </audio>
+    <div class="current_username">当前用户：{{current_username}} <span id="galcate_logout" style="border-left: 1px dashed gray; padding-left: 10px;">登出</span></div>
+    <div class="vertical_center">
+    <div class="container" style="position: absolute;top: 0; bottom: 0; left: 0; right: 0; margin: auto;height: 500px; width: 80%">
+      <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="/static/moment/image/pic/back.jpg" alt="...">
+              <div class="caption">
+                <h3>{{whether_load_hint0}} </h3>
+                <p>{{whether_load_content0}} </p>
+                <p><section>
+                    <button class='lined thin'id="line_cre0" >{{whether_load0}}</button>
+                  </section>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <img src="/static/moment/image/pic/back.jpg" alt="...">
+                <div class="caption">
+                  <h3>{{whether_load_hint1}}</h3>
+                  <p>{{whether_load_content1}}</p>
+                  <p><section>
+                      <button class='lined thin'id="line_cre1" >{{whether_load1}}</button>
+                    </section>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <img src="/static/moment/image/pic/back.jpg" alt="...">
+                  <div class="caption">
+                    <h3>{{whether_load_hint2}}</h3>
+                    <p>{{whether_load_content2}}</p>
+                    <p><section>
+                        <button class='lined thin'id="line_cre2" >{{whether_load2}}</button>
+                      </section>
+                    </p>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="fix_outer display_none" style="z-index: 1003;" id="promote_window_whole">
+          <div class="promote_window">
+              <i id="promote_close_icon" class="glyphicon glyphicon-off" aria-hidden="true" style="float: right;position: absolute;top: 10px;right: 10px;" ></i>
+            <div class="promote_window_content">
+              <div class="promote_window_text">
+                <div class="promote_title" id="promote_title">我想留下来</div>
+                <br>
+                <div class="promote_content" id="promote_content">确定购买？你将消耗大数据的可能晚点就是插卡市场</div>
+                <div class="promote_btn_list">
+                <section>
+                    <button class='dashed thin promote_btn' id="promote_cancel_btn">取消</button>
+                    <button class='dashed thin promote_btn' id="promote_confirm_btn">确定</button>
+                </section>
+              </div>
+              </div>
+              <img class="promote_window_img" src="/static/moment/image/figure/pink04.png">
+            </div>
+          </div>
+        </div>
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/moment/script/achieve_id.js"></script>
+  </body>
+</html>
+ 
+
+
+

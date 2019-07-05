@@ -1,0 +1,35 @@
+.pop {
+    position: relative;
+    display: none;
+  } 
+  .pop > span {
+    cursor: pointer;
+    position: fixed;
+    top: 4%;
+    left: 4%;
+    font-size: 3rem;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    background:#65A8A6;
+    color:black;
+    padding: 12px 0px 0px 18px;
+    width: 45px;
+    height: 45px;
+    vertical-align: middle;
+    text-align: center;
+    display: table-cell;
+  } 
+
+  .pop_up_cross a{
+    position: absolute;
+    left: 2px;
+    right: 2px; 
+    top: 2px;
+    bottom: 2px; 
+    color: #F8ECC2;
+  }
+  .pop_up_cross a:hover{
+    color: #E65540;
+  }
+  

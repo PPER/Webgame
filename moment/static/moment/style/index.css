@@ -1,0 +1,53 @@
+.fix_outer {
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+  }
+  .display_none{
+    display: none;
+  }
+  .own_window{
+    height: 60%;
+    width: 35%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    font-size: 1.7rem;
+    font-family: 微軟正黑體;
+    border: 1px solid black;
+    background-color: #65A8A6;
+  }
+  .own_window_content{
+    width: 100%;
+    height: 80%;
+    padding: 5% 10%;
+    position: absolute;
+    margin: 0 auto;
+    top: 10%;
+    background-color: #F8ECC2;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+  .own_window_title{
+    padding:5px;
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #F8ECC2;
+}
+#own_close_icon{
+    color: #F8ECC2;
+    cursor: pointer;
+  }
+#own_close_icon:hover{
+    color: #E65540;
+  }

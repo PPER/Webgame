@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Pigeon</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- 自定义part -->
+
+    <style type="text/css">
+      @import url("/static/moment/style/dashed_button.css");
+      @import url("/static/moment/style/loading.css");
+      @import url("/static/moment/style/align.css");
+      @import url("/static/moment/style/part.css");
+      @import url("/static/moment/style/sidebar_navigation.css");
+      @import url("/static/moment/style/badge.css");
+      @import url("/static/moment/style/comment_card.css");
+      @import url("/static/moment/style/pop_up.css");
+      @import url("/static/moment/style/chat_window.css");
+      @import url("/static/moment/style/address_book.css");
+      @import url("/static/moment/style/name_card.css");
+      @import url("/static/moment/style/store_card.css");
+      @import url("/static/moment/style/setting_window.css");
+      @import url("/static/moment/style/navigation.css");
+      @import url("/static/moment/style/thumbnail_blog.css");
+      @import url("/static/moment/style/shopping_cart.css");
+      @import url("/static/moment/style/jquery-ui-1.12.1.custom/jquery-ui.css");
+      @import url("/static/moment/style/jquery-ui-1.12.1.custom/jquery-ui.theme.css");
+      @import url("/static/moment/style/jquery-ui-1.12.1.custom/jquery-ui.structure.css");
+      @import url("/static/moment/style/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.css");
+    </style>
+ 
+  </head>
+  <body id="body_back" background="/static/moment/image/element/black.jpg" style=" background-repeat:no-repeat ; background-color: black; background-size:100% 100%; background-attachment: fixed; transition: background 0.5s ease-in-out;">
+  
+    <iframe src="/static/moment/audio/silence.mp3" style="display: none" allow="autoplay" id="audio"></iframe>
+    <div id="loading_section">
+        <div class="load">
+            <div class="hamburger">
+              <div class="top-bun"></div>
+              <div class="pickle"></div>
+              <div class="pickle"></div>
+              <div class="tomato"><div></div></div>
+              <div class="tomato"><div></div></div>
+              <div class="cheese"></div>
+              <div class="cheese"></div>
+              <div class="beef"></div>
+              <div class="bottom-bun"></div>
+            </div>
+            <h1>LOADING...</h1>
+            <div class="loading_tag" id="loading_process">加载图片中....第一次加载可能需要2分钟请稍等喵...</div>
+          </div>
+    </div>
+    <div class="fix_outer display_none" style="z-index: 1003;" id="audio_window_whole">
+        <div class="setting_window">
+            <div class="audio_window_title">设置</div>
+        <span id="audio_close_icon" class="glyphicon glyphicon-off" aria-hidden="true"  ></span>
+          <div class="setting_window_content">
+            <div class="audio_section">
+              <div class="audio_text"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>背景音乐</div>
+              <div class="audio_setting">
+                  <audio controls="controls" id="backMusicAudio" autoplay="autoplay" loop="loop" >
+                      <source id="backMusic" src="/static/moment/audio/back.mp3"  type="audio/mp3" />
+                    </audio>
+              </div>
+            </div>
+            <div class="audio_section">
+                <div class="audio_text"><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>其他音效</div>
+                <div class="audio_setting">
+                    <audio controls="controls" id="specialMusicAudio">
+                        <source id="specialMusic"  type="audio/mp3" />
+                      </audio>
+                </div>
+              </div>
+
+              <div class="audio_section">
+                <div class="audio_text"><span class="glyphicon glyphicon-hourglass" aria-hidden="true"></span>
+                手动/自动模式
+                </div>
+                  <div class="audio_text">
+                    <span class="glyphicon glyphicon-text-size" aria-hidden="true"></span>
+                    字符时间间隔
+                    <input type="text" class="auto_text_setting_letter" value="1000" id="character_interval"> ms
+                  </div>
+                  <div class="audio_text">
+                      <span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span>
+                      句子时间间隔
+                      <input type="text" class="auto_text_setting_letter" value="1000" id="sentence_interval"> ms
+                    </div>
+                </div>
+                
+                </div>
+                <div id="setting_confirm"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>确认</div>
+          </div>
+
+        </div>
+
+    <div style="z-index: 0;" id="story_figure_left_container" class="story_figure_container" > 
+      <img class="story_figure_img" id="story_figure_left" src=""  />
+    </div>
+    <div style="z-index: 0;" id="story_figure_right_container" class="story_figure_container">
+      <img class="story_figure_img" id="story_figure_right" src=""  />
+    </div>
+    <div style="z-index: 0;" id="story_figure_center_container" class="story_figure_container">
+      <img class="story_figure_img" id="story_figure_center" src="" />
+    </div>
+    <div class="story_words_tag">
+      <span class="glyphicon glyphicon-hand-right" aria-hidden="true" style="float: left;vertical-align: middle;"></span>
+      <span id="story_words_tag">...</span>
+    </div>
+    <div id="story_words_background" class="story_words_background" style="z-index: 1;">
+      <div id="story_words" ></div>
+      <div id="auto_play">
+        AUTO <i id="auto_icon" class="glyphicon glyphicon-play" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div class="over_all" id="button_list_all" style="display: none">
+    <div style="  width: 800px;
+    padding: 10px;
+    height: 50px;
+    position: absolute;
+    margin-left: -400px;
+    top: 20%;
+    left: 50%;">
+        <div id="button_list" style="font-size: 3rem;position: absolute;width: 600px;margin-left: -300px;left: 50%;text-align: center;">
+        </div>
+      </div>
+    </div>
+        
+
+    <div  style="position:absolute;right: 5%; bottom: 1cm; z-index: 2;">
+      <section>
+        <button class='lined thin'id="buttonBack" style="font-size: 2rem;">人生无悔</button>
+        <button class='dashed thin' id="onlySave" style="font-size: 2rem;">保存</button>
+        <button class='dashed thin' id="main_store" style="font-size: 2rem;">成就与商店</button>
+        <button class='dashed thin' id="buttonSave" style="font-size: 2rem;">切换存档</button>
+        <button class='dashed thin' id="buttonLogout" style="font-size: 2rem;">退出游戏</button>
+        <!-- <button class='dashed thin' id="comment_card_button" style="font-size: 2rem;">小灰屋里的卡片</button> -->
+      </section>
+    </div>
+      
+      <!-- <a href="" class="trigger"><span></span></a> -->
+  <div class="button_list_icon">
+    <div class="icon_circle" id="navbar">
+        <a><i class="glyphicon glyphicon-eye-open" aria-hidden="true"></i></a>
+      <div class="circleInner" id="navbar_hint_circle" ></div>
+    </div>
+    <div class="icon_circle" id="phone">
+        <a><i class="glyphicon glyphicon-user" aria-hidden="true"></i></a>
+      <div class="circleInner" id="chat_log_hint_circle"></div>
+    </div>
+    <div class="icon_circle" id="setting_btn">
+        <a><i class="glyphicon glyphicon-cog" aria-hidden="true"></i></a>
+    </div>
+  </div>
+
+<div class="nveMenu text-left" style="z-index: 5;">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="proile_photo">
+                <img id="profile_photo" src="/static/moment/image/setting_dir/profile_phote.jpg">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div id="profile_basic">
+                <div>名字：PP</div>
+                <div>年龄：20</div>
+                <div>简介：我又饿又菜只能把自己吃了.</div>
+                <div>游戏用户：{{current_username}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="text-overline"><span class="glyphicon glyphicon-search" aria-hidden="true">   目前成就</span></div>
+  
+  <div class="navlinks p-0 mt-4">
+    <div><level><span class="glyphicon glyphicon-tint" aria-hidden="true"></span>   健康值：<span id="current_health"></span><span class="badge badge-error" id="health_change">+66</span></level></div>
+    <div><level><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>   心情值：<span id="current_love"></span> <span class="badge badge-error" id="love_change">+34</span></level></div>
+    <div><level><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>   金钱值：<span id="current_money"></span> <span class="badge badge-error" id="money_change">+3<span></level></div>
+  </div>
+  <div style="position:absolute;right: 5%; bottom: 1cm;">
+  <section>
+      <button class='lined thin'id="nav_guid" style="font-size: 2rem;">攻略</button>
+      <button class='dashed thin' id="nav_log_out" style="font-size: 2rem;">登出</button>
+  </section>
+</div>
+</div>
+
+<div class="overlay"></div>
+<div  id="comment_card" class="pop" style="z-index: 14;">
+  <span id="comment_card_icon" class="pop_up_cross"><a><i class="glyphicon glyphicon-off" aria-hidden="true" ></i></a></span>
+  <div class="pop_inner">
+  <ul class="comment_card_cards">
+      <li class="comment_card_card">
+        <h1>Comment comment_card_card 1 </h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum, lorem vel tincidunt imperdiet, nibh elit laoreet felis, a bibendum nisl tortor non orci. Donec pretium fermentum felis, quis aliquet est rutrum ut. Integer quis massa ut lacus viverra pharetra in eu lacus. Aliquam tempus odio adipiscing diam pellentesque rhoncus. Curabitur a bibendum est. Mauris vehicula cursus risus id luctus. Curabitur accumsan venenatis nibh, non egestas ipsum vulputate ac. Vivamus consectetur dolor sit amet enim aliquet eu scelerisque ipsum hendrerit. Donec lobortis suscipit vestibulum. Nullam luctus pellentesque risus in ullamcorper. Nam neque nunc, mattis vitae ornare ut, feugiat a erat. Ut tempus iaculis augue vel pellentesque.</p>
+      </li>
+      <li class="comment_card_card">
+        <h1>Comment comment_card_card 2 </h1>
+        <p>Vestibulum nunc massa, gravida quis porta nec, feugiat id metus. Nunc ac arcu dolor, quis vestibulum leo. Cras viverra mollis ipsum, non rhoncus lectus aliquam et. Morbi faucibus purus sit amet lacus aliquet elementum. Donec sit amet posuere enim. Cras in eros id tortor fringilla ultricies. Mauris faucibus ullamcorper velit, pulvinar varius odio eleifend eu. Quisque id odio metus. Morbi adipiscing ultricies posuere. Pellentesque elementum porttitor eros in molestie. Maecenas ut leo quis nisi tempor tincidunt.</p>
+      </li>
+      <li class="comment_card_card">
+        <h1>Comment comment_card_card 3</h1>
+        <p>Donec nunc ligula, vulputate quis mollis eu, interdum quis libero. Donec nulla ante, facilisis sit amet vulputate at, tincidunt a velit. Maecenas vestibulum, nulla sed tincidunt viverra, lorem turpis aliquam urna, ut pretium orci purus consequat augue. Etiam a enim orci, vitae pulvinar odio. In elit urna, tincidunt a pellentesque et, scelerisque at nibh. Sed nec est sapien. Aliquam ullamcorper eros eu quam ultrices vel faucibus eros interdum. Etiam mattis eleifend sapien, eu iaculis massa feugiat sed. Aliquam erat volutpat. Vivamus facilisis ultricies eros, a pretium purus mollis id. Sed dapibus elit ut neque rutrum dignissim. Nulla eros nisl, venenatis quis rhoncus sit amet, molestie nec nisl. Pellentesque vel neque sapien, et sagittis nulla.</p>
+    
+      </li>
+      <li class="comment_card_card">
+        <h1>Comment comment_card_card 4</h1>
+        <p>Donec nunc ligula, vulputate quis mollis eu, interdum quis libero. Donec nulla ante, facilisis sit amet vulputate at, tincidunt a velit. Maecenas vestibulum, nulla sed tincidunt viverra, lorem turpis aliquam urna, ut pretium orci purus consequat augue. Etiam a enim orci, vitae pulvinar odio. In elit urna, tincidunt a pellentesque et, scelerisque at nibh. Sed nec est sapien. Aliquam ullamcorper eros eu quam ultrices vel faucibus eros interdum. Etiam mattis eleifend sapien, eu iaculis massa feugiat sed. Aliquam erat volutpat. Vivamus facilisis ultricies eros, a pretium purus mollis id. Sed dapibus elit ut neque rutrum dignissim. Nulla eros nisl, venenatis quis rhoncus sit amet, molestie nec nisl. Pellentesque vel neque sapien, et sagittis nulla.</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="drag_phone_window">
+<div id="phone_window" class="pop" style="z-index: 14;">
+  <span id="phone_icon" class="pop_up_cross"><a><i class="glyphicon glyphicon-off" aria-hidden="true" ></i></a></span>
+  <div class="chat">
+      <div class="chat-title">
+        <h2 id="contact_name" style="cursor: pointer;">【系统提示】</h2>
+        <span>
+            <a><i class="glyphicon glyphicon-comment" aria-hidden="true" id="chat_window_icon"></i></a>
+        </span>
+        <figure class="avatar" ><img id="profile_avatar" src="/static/moment/image/setting_dir/profile_phote.jpg"/></figure>
+      </div>
+      <div class="messages">
+        <div class="messages-content"></div>
+      </div>
+      <div class="action-box">
+        <textarea class="action-box-input" type="text" placeholder="Type message..."></textarea>
+        <button class="action-box-submit" type="submit" onclick="insertMessage()"><span class="glyphicon glyphicon-send" aria-hidden="true" style="color: beige"></span> </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class='phone_chat' style="z-index: 15;">
+      <header>
+        <h2 class='title'>
+          <a href=''>通讯录</a>
+        </h2>
+      </header>
+      <div class='body'>
+        <ul id="contact_name_list">
+         <!--  <li>
+            <a class='thumbnail' href='#'>
+              NR
+            </a>
+            <div class='content'>
+              <h3>Nick Roach</h3>
+              <span class='preview'>hey how are things going on the...</span>
+              <span class='meta'>
+                2h ago &middot;
+                <a href='#'>Category</a>
+                &middot;
+                <a href='#'>Reply</a>
+              </span>
+            </div>
+          </li>
+          <li>
+            <a class='thumbnail' href='#'>
+              KS
+            </a>
+            <div class='content'>
+              <h3 id="chat_window_contact_name">Kenny Sing</h3>
+              <span class='preview'>make sure you take a look at the...</span>
+              <span class='meta'>
+                3h ago &middot;
+                <a href='#'>Category</a>
+                &middot;
+                <a href='#'>Reply</a>
+              </span>
+            </div>
+          </li>
+          -->
+        </ul>
+      </div>
+      <footer>
+          <span id="chat_window_cross"><a><i class="glyphicon glyphicon-off" aria-hidden="true" ></i></a></span>
+      </footer>
+    </div>
+
+    <div id="process"  style="z-index: 500;display: none;">
+        <div style="display: inline;">
+            <div>
+              <nav style="z-index: 800;">
+                  <span id="Arch" >存档</span>
+                  <span id="archive">名片</span>
+                  <span id="store_card">图鉴</span>
+                  <span id="gift">旅行与礼物</span>
+                  <span id="shopping">商店</span>  
+                  <span id="process_close" style="float: right;"><i class="glyphicon glyphicon-off" aria-hidden="true" ></i></span>
+              </nav>
+              <div class="button_list_icon_process" id="process_drop_down_arch"style="z-index: 500;">
+              <div class="icon_circle" id="no1arch">
+                  <a>壹</a>
+              </div>
+              <div class="icon_circle" id="no2arch">
+                  <a>贰</a>
+              </div>
+              <div class="icon_circle" id="no3arch">
+                  <a>叁</a>
+              </div>
+            </div>
+            <div id="content"  style="position: absolute; top: 10%;left: 10%;right: 10%; z-index: 500;">
+                
+            </div>
+            </div>
+            </div>  
+            
+    </div>
+
+    <div class="over_all display_none" id="intro_human">
+      <img class="background_img" id="intro_background">
+      <div class="triangle_top"></div>
+      <img class="ink_intro" id="ink_intro_fig" src="/static/moment/image/element/ink.png">
+      <div id="name_card_figure">
+        <img id="name_card_figure_img" >
+      </div>
+      <div class="triangle_bottom"></div>
+      <div id="name_card_chat">
+        <div style="font-size: 3rem; float: center;" id="intro_name"></div>
+        <div>....................................</div>
+        <div id="intro_illus"></div>
+        <div><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> 好感度：<span id="ink_value_love"></span></div>
+          <div><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span> 金钱值：<span id="ink_value_money"></span></div>
+          <div><span class="glyphicon glyphicon-tint" aria-hidden="true"></span> 健康值：<span id="ink_value_health"></span></div>
+      </div>
+    </div>
+
+    
+
+    <div class="over_all display_none" id="film_mode">
+      <div id="film_background" style="background-color: black;"></div>
+      <div class="rectangle_top"></div>
+      <div class="rectangle_bottom"></div>
+      <div class="film_content">
+        <span id="film_content"></span>
+      </div>
+    </div>
+
+<!--     <div class="store_card store_card_thumbnail" > 
+      <img id="store_card_img" src="/static/moment/image/element/greemcard.png">
+      <img id="store_card_background" src="/static/moment/image/test/cantin.jpg">
+      <img id="store_card_figure" src="/static/moment/image/figure/pink04.png">
+    </div> -->
+    <span id="SC_over_all_icon" class="pop_up_cross" style="z-index: 1001;"style="position: fixed"><a><i class="glyphicon glyphicon-off" aria-hidden="true" ></i></a></span>
+    <div class="store_card_over_all display_none" id="new_tag" style="position: fixed; z-index: 1000;" ><img class="new_tag" src="/static/moment/image/element/new.png"></div>
+    <div class="store_card_over_all display_none" id="new_money_over"style="position: fixed;z-index: 1000" >
+      <img class="new_money" src="/static/moment/image/element/lucky_money.png">
+      <div class="new_money_value">
+        <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>
+        获得金钱值：<span id="new_money_value"></span>
+      </div>
+    </div>
+    <div class="over_all display_none" id="flip_icon" style="z-index: 1000">
+      <div class="store_card_over store_card_over_all flip_front" > 
+        <img id="store_card_img_front" class="store_card_img" >
+        <img class="store_card_background_over_all" id="store_card_background_over_all_front">
+        <img id="store_card_figure" class="store_card_figure">
+      </div>
+      <div class="store_card_over store_card_over_all flip_back" > 
+          <img id="store_card_img_back" class="store_card_img" >
+          <img class="store_card_background_over_all" id="store_card_background_over_all_back">
+          <div class="store_card_content">
+            <div id="card_back_content">
+              <div id="card_back_star">
+                  <i id="SCstar1" class="glyphicon glyphicon-star" aria-hidden="true"></i>
+                  <i id="SCstar2" class="glyphicon glyphicon-star" aria-hidden="true"></i>
+                  <i id="SCstar3" class="glyphicon glyphicon-star" aria-hidden="true"></i>
+                  <i id="SCstar4" class="glyphicon glyphicon-star" aria-hidden="true"></i>
+                  <i id="SCstar5" class="glyphicon glyphicon-star" aria-hidden="true"></i>
+              </div>
+              <div id="card_back_title">???</div>
+              <br>
+              <div id="card_back_text">我爱大家看成本那是尽快回复我爱德华口径的武器本地户口开始的参考价啊的空间我等哈甲壳虫你不稳定经济看大家我看</div>
+
+              </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="fix_outer display_none" style="z-index: 400" id="shopping_cart_icon_list">
+        <div class="shopping_cart_inner">
+          <div class="store_card_name shopping_right_tag" id="shopping_cart_icon"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></div>
+          <div class="store_card_name shopping_right_tag" id="already_have_icon"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></div>
+          <div class="store_card_name shopping_right_tag" id="lucky_draw_icon"><span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span></div>
+        </div>
+      </div>
+
+      <div class="fix_outer display_none" style="z-index: 999;" id="cart_over">
+      <div class="add_cart">
+        <div class="add_cart_bar add_cart_bar_top">购物车 <i id="cart_over_close" class="glyphicon glyphicon-off" aria-hidden="true" style="float: right;" ></i></div>
+        <div class="add_card_title">
+            <input class="product_check_box_item" type="checkbox" id="all_check_box"/>
+          <div class="product_name add_cart_height_hund">商品名称</div>
+          <div class="product_number add_cart_height_hund">数量</div>
+          <div class="product_unit_money add_cart_height_hund">单价</div>
+          <div class="product_unit_total_money add_cart_height_hund">总价</div>
+          <div class="product_cancel add_cart_height_hund">取消</div>
+        </div>
+        <div class="product_section_container" id="product_section_container">
+<!--           <div class="add_card_title border_cart">
+            <input class="product_check_box_item" type="checkbox" id="product_check_box" />
+            <div class="product_name add_cart_height_cal">一只可爱的人</div>
+            <div class="product_number">
+          <div class="add_cart_height_cal cart_quantity">
+              <input class="shopping_cart_btn minus_btn" type="button" value="-">
+              <input type="text" class="shopping_cart_text" value="1">
+              <input class="shopping_cart_btn plus_btn" type="button" value="+">
+          </div>
+        </div>
+          <div class="product_unit_money add_cart_height_cal">21</div>
+          <div class="product_unit_total_money add_cart_height_cal">45</div>
+          <div class="product_cancel add_cart_height_cal"><i class="glyphicon glyphicon-remove" aria-hidden="true" ></i></div>
+        </div> -->
+  
+     <!--    <div class="add_card_title border_cart">
+            <input class="product_check_box_item" type="checkbox" id="product_check_box" />
+            <div class="product_name add_cart_height_cal">一只可爱的人</div>
+            <div class="product_number">
+          <div class="add_cart_height_cal cart_quantity">
+              <input class="shopping_cart_btn minus_btn" type="button" value="-">
+              <input type="text" class="shopping_cart_text" value="1">
+              <input class="shopping_cart_btn plus_btn" type="button" value="+">
+          </div>
+        </div>
+          <div class="product_unit_money add_cart_height_cal">21</div>
+          <div class="product_unit_total_money add_cart_height_cal">45</div>
+          <div class="product_cancel add_cart_height_cal"><i class="glyphicon glyphicon-remove" aria-hidden="true" ></i></div>
+        </div> -->
+  
+      </div>
+        <div class="product_checkout border_cart">
+          <div class="product_total_money">Total: <span id="product_total_money">0</span></div>
+        </div>
+        <div class="checkout_btn" id="checkout_btn">√ 结算</div>
+      </div>
+    </div>
+
+
+    <div class="fix_outer display_none" style="z-index: 1003;" id="promote_window_whole">
+        <div class="promote_window">
+            <i id="promote_close_icon" class="glyphicon glyphicon-off" aria-hidden="true" style="float: right;position: absolute;top: 10px;right: 10px;" ></i>
+          <div class="promote_window_content">
+            <div class="promote_window_text">
+              <div class="promote_title" id="promote_title"></div>
+              <br>
+              <div class="promote_content" id="promote_content"></div>
+              <div class="promote_btn_list">
+              <section>
+                  <button class='dashed thin promote_btn' id="promote_cancel_btn">取消</button>
+                  <button class='dashed thin promote_btn' id="promote_confirm_btn">确定</button>
+              </section>
+            </div>
+            </div>
+            <img class="promote_window_img" src="/static/moment/image/figure/pink04.png">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="fix_outer display_none" style="z-index: 1003;" id="hint_window_whole">
+        <div class="promote_window">
+            <i id="hint_close_icon" class="glyphicon glyphicon-off" aria-hidden="true" style="float: right;position: absolute;top: 10px;right: 10px;" ></i>
+          <div class="promote_window_content">
+            <div class="promote_window_text">
+              <div class="promote_title" id="hint_title"></div>
+              <br>
+              <div class="promote_content" id="hint_content"></div>
+              <div class="promote_btn_list">
+                <section>
+                    <button class='dashed thin promote_btn' id="hint_cancel_btn">确定</button>
+                </section>
+              </div>
+            </div>
+            <img class="promote_window_img" id="hint_img" src="/static/moment/image/figure/pink04.png">
+          </div>
+        </div>
+      </div>
+
+      <div class="fix_outer display_none" id="own_window_whole" style="z-index: 999;">
+          <div class="own_window">
+            <div class="own_window_title">物品架</div>
+              <i id="own_close_icon" class="glyphicon glyphicon-off" aria-hidden="true" style="float: right;position: absolute;top: 10px;right: 10px;" ></i>
+            <div class="own_window_content" id="own_window_content">
+                <!-- <div class="own_section">
+                  <div class="own_img_container">
+                    <img class="own_img"src="/static/moment/image/test/cantin.jpg">
+                  </div>
+                  <div class="own_text">
+                  <div class="own_title">我在这里</div>
+                  <div class="own_amount"><span class="glyphicon glyphicon-stats" aria-hidden="true" ></span>已拥有数量：<span>200</span></div>
+                  </div>
+                  <div class="own_btn_list">
+                      <section>
+                          <button class='dashed thin own_btn' id="own_illustration_btn">详情</button>
+                          <button class='dashed thin own_btn' id="own_use_btn">使用</button>
+                      </section>
+                    </div>
+                </div> -->
+                
+            </div>
+          </div>
+        </div>
+
+
+
+    <div class="overlay_whole"></div>
+    <div class="overlay_whole_process"></div>
+    <div class="overlay_whole_SC"></div>
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="/static/moment/style/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/moment/script/basic_functions.js"></script>
+    <script type="text/javascript" src="/static/moment/script/loading.js"></script>
+    <script type="text/javascript" src="/static/moment/script/backloading.js"></script>
+    <script type="text/javascript" src="/static/moment/script/chat_window.js"></script>
+    <script type="text/javascript" src="/static/moment/script/story.js"></script>
+    <script type="text/javascript" src="/static/moment/script/story_style.js"></script>
+    <script type="text/javascript" src="/static/moment/script/sidebar_navigation.js"></script>
+    <script type="text/javascript" src="/static/moment/script/comment_card.js"></script>
+    <script type="text/javascript" src="/static/moment/script/story_style.js"></script>
+    <script src="/static/moment/style/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.js"></script>
+    <script type="text/javascript" src="/static/moment/script/process.js"></script>
+    <script type="text/javascript" src="/static/moment/script/film.js"></script>
+    <script type="text/javascript" src="https://lib.webfont.com/fastjs.min.js"></script>
+    <script type="text/javascript" src="/static/moment/script/jQuery.Transit-0.9.12/jquery.transit-0.9.12/jquery.transit.js"></script>
+  </body>
+</html>

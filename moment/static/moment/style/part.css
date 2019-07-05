@@ -1,0 +1,291 @@
+
+  .story_words_background {
+    position: absolute;
+    background: rgba(248, 236, 194, 0.8);/* rgba(215, 215, 216, 0.8); */
+    font-size: 35px;
+    /* margin-top:10px; */
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 20vh;
+    width: 90%;
+    padding: 30px 40px 40px 30px;
+    bottom: 15%;
+  }
+  .story_words_tag{
+    position: absolute;
+    background: rgba(248, 236, 194, 0.8);
+    margin-left: 5%;
+    width: 19vw;
+/*     margin-top: 30%; */
+    text-align: center;
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+    font-size: 2.5rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    bottom:37vh;
+  }
+  #story_words{
+    font-family: 'ZCOOL KuaiLe', cursive;
+    position:relative;
+    font-size: 25px;
+    opacity: 1;
+  }
+
+.story_figure_container{
+  position: absolute;
+  bottom:0cm;
+  top: 0cm;
+  border:0;
+  width: 100%;
+  height: 100%;
+}
+
+#story_figure_center_container{
+  width: 100%;
+  margin-left: auto;
+  margin-right:auto; 
+  text-align: center;
+}
+
+.story_figure_img{
+  height: 100%;
+  display: block;
+}
+
+#story_figure_center{
+  margin-left: auto;
+  margin-right:auto; 
+  text-align: center;
+}
+#story_figure_left{
+  position: absolute;
+  left: 4cm;
+}
+#story_figure_right{
+  position: absolute;
+  right: 4cm;
+}
+
+.triangle_top{
+  position: fixed;
+  top: 0;
+  width: 0;
+	height: 0;
+	border-top: 0px solid transparent;
+	border-left: 100vw solid black;
+  border-bottom: 25vh solid transparent;
+  z-index: 70;
+}
+
+.triangle_bottom{
+  position: fixed;
+  bottom: 0;
+  width: 0;
+	height: 0;
+	border-bottom: 0px solid transparent;
+	border-right: 100vw solid black;
+  border-top: 25vh solid transparent;
+  z-index: 100;
+}
+
+.rectangle_bottom{
+  position: fixed;
+  width: 100vw;
+  height: 21vh;
+  left: 0;
+  bottom: 0;
+  background-color: black;
+  z-index: 60;
+}
+
+.rectangle_top{
+  position: fixed;
+  width: 100vw;
+  height: 21vh;
+  left: 0;
+  top: 0;
+  background-color: black;
+  z-index: 90;
+}
+
+#film_background{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0%;
+  left: 0;
+  background-image: url("/static/moment/image/element/black.jpg");
+  transition: background-image 1s linear;
+  background-repeat:no-repeat ; 
+  background-size:100% 100%;
+}
+
+.film_content{
+  font:"黑体";
+  color:white;
+  position: fixed;
+  bottom: 7vh;
+  text-align: center;
+  vertical-align: middle;
+  left:50%;
+  width: 700px;
+  margin-left: -350px;
+  font-size: 2.9rem;
+  font-weight: 300;
+  z-index: 99;
+  letter-spacing: 5px;
+  font-family: 'Segoe UI', Tahoma;
+}
+
+.display_none{
+  display: none;
+}
+
+.ink_intro{
+  position: fixed;
+  top: 5vh;
+  left: 0vw;
+  width: 70vw;
+  height: auto;
+  text-align: center;
+  vertical-align: middle;
+  z-index: 999;
+  font-size: 2rem;
+  font-weight: 300;
+  color: white;
+  z-index: 71;
+  font-family: 'ZCOOL KuaiLe', cursive;
+}
+.ink_content{
+  width: 100%;
+  height: 50%;
+  top: 35%;
+  left: -5%;
+  margin: 0 auto;
+  position: relative;
+} 
+#auto_play{
+  font-weight: bolder;
+  position: absolute;
+  display: inline-block;
+  right: 1rem;
+  bottom: 1rem;
+  width: 10rem;
+  font-size: 2rem;
+  color: black;
+  text-align: right;
+  cursor: pointer;
+}
+#auto_play:hover{
+  color: #E65540;
+}
+
+.background_img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 70;
+}
+
+.promote_window{
+  height: 50%;
+  width: 35%;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 1.7rem;
+  font-family: 微軟正黑體;
+  border: 1px solid black;
+  background-color: #65A8A6;
+}
+.promote_window_content{
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  margin: 0 auto;
+  top: 10%;
+  background-color: #F8ECC2;
+}
+.promote_window_text{
+  width: 60%;
+  height: 100%;
+  padding: 20px 20px;
+  left: 0px;
+  letter-spacing: 1px;
+  font-family: 微軟正黑體;
+}
+.promote_title{
+  font-size: 2rem;
+  font-weight: 900px;
+}
+.promote_content{
+  height: 60%;
+  font-size: 1.8rem;
+  overflow:auto;
+}
+.promote_window_img{
+  height: 70%;
+  max-width: 40%;
+  max-height: 100%;
+  bottom: 0;
+  right: 10px;
+  position: absolute;
+  display: block;
+}
+.promote_btn{
+  max-height: 10%;
+  height: 36.5px;
+  padding: 2px 10px;
+  font-size: 2rem;
+  font-weight: 400;
+  left: 0px;
+  bottom: 0px;
+  position: relative;
+  letter-spacing: 1px;
+}
+.promote_btn_list{
+  width: 60%;
+  height: 37px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  position: absolute;
+  bottom: 0px;
+}
+.promote_btn_right{
+  height: 36.5px;
+  padding: 2px 10px;
+  font-size: 2rem;
+  font-weight: 400;
+  right: 0px;
+  bottom: 0px;
+  position: absolute;
+  letter-spacing: 1px;
+}
+.promote_btn:hover {
+  box-shadow: 2px 8px 4px -6px rgba(0, 0, 0, 0.3);
+  color: #E65540;
+}
+#promote_close_icon{
+  color: #F8ECC2;
+  cursor: pointer;
+}
+#promote_close_icon:hover{
+  color: #E65540;
+}
+#hint_close_icon{
+  color: #F8ECC2;
+  cursor: pointer;
+}
+#hint_close_icon:hover{
+  color: #E65540;
+}

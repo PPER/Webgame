@@ -1,0 +1,35 @@
+body {
+    color: #fff;
+  }
+  
+  .all {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-family: "Helvetica Neue";
+    background-color: #FFF;
+  }
+  
+  .number {
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    font-size: 150px;
+    height: 200px;
+    font-weight: 500;
+    color: #5B4;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .explain {
+    color: #444;
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    font-size: 14px;
+    height: 200px;
+    text-align: center;
+  }

@@ -1,0 +1,35 @@
+nav {
+position: absolute;
+top: 0%;
+width: 100%;
+background-color:#65A8A6;
+font-size: 2.5rem;
+padding: 0%;
+cursor: pointer;
+}
+
+nav span {
+display:inline-block; 
+float: left; 
+cursor: pointer;
+}
+
+nav span {
+color:#F8ECC2;
+display:block;
+text-decoration: none;
+padding:20px 30px;
+cursor: pointer;
+}
+
+nav span:hover {
+    height: 100%;
+    background: #E65540;
+    cursor: pointer;
+}
+
+.menu-trigger {
+display:none;
+color:#F8ECC2;
+cursor: pointer;
+}
