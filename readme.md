@@ -37,5 +37,10 @@ Only for Chrome
 [Trouble_Shooting](https://github.com/PPER/Webgame/wiki/Trouble-Shooting)
 若出现其他奇怪的问题在issue里提
 
+## 暂咕咕
++ 忘记密码写了个前端按钮功能没写
++ 验证码登陆
++ 音频在服务器端运行需要加个pre loading
+
 ## License
 MIT
