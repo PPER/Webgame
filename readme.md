@@ -21,11 +21,7 @@ Frame
 
 
 ## Frame开发文档
-[Development Doc](https://github.com/PPER/lalaland/wiki/Development-Doc)
-
-## 游戏过程中可能出现的问题以及解决方法
-[Trouble_Shooting](https://github.com/PPER/lalaland/wiki/Trouble-Shooting)
-若出现其他奇怪的问题在issue里提
+[Development Doc](https://github.com/PPER/Webgame/wiki/Development-Doc)
 
 
 ## 资源来源
@@ -37,9 +33,9 @@ Frame
 ## 浏览器支持
 Only for Chrome
 
-## 游戏注意事项
-+ Loading时间可能较长，加快速度，下次进入前不要清浏览器缓存
-+ 退出游戏前请点击【保存】or【退出游戏】，不要直接关闭浏览器。游戏会每隔5min自动保存，但是直接退出会造成进度不follow。
+## 游戏问题以及解决方法
+[Trouble_Shooting](https://github.com/PPER/Webgame/wiki/Trouble-Shooting)
+若出现其他奇怪的问题在issue里提
 
 ## License
 MIT
