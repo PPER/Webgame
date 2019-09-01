@@ -9,16 +9,13 @@ var chat_repo=new Array(); //chat log集合 我为什么要写back功能啊呜�
 //通讯录完善
 messages = $(".messages-content");
 fakeNum = 0;
-
 contactName="";
-
 isTyping = true;
-
 uctTimer = null;
-
 chatPic="";
 initialGenMark=0;
 generate_contact();
+
 $("#phone").click(function () {
   if(contactName){
     document.getElementById('mCSB_1_container').innerHTML=" ";

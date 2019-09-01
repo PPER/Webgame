@@ -1,4 +1,5 @@
 var imageSrcsBack=[];
+
 function backLoadImages() {
     var image;
     for (i = 0; i < imageSrcsBack.length; i++) {
@@ -42,5 +43,5 @@ function backLoadRepo(){
 
 }
 }
-// then to call it, you would use this
+// then to call it
 backLoadRepo();

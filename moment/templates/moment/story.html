@@ -60,16 +60,16 @@
               <div class="bottom-bun"></div>
             </div>
             <h1>LOADING...</h1>
-            <div class="loading_tag" id="loading_process">加载图片中....第一次加载可能需要2分钟请稍等喵...</div>
+            <div class="loading_tag" id="loading_process">Loading pictures... It may take 2 minutes for the first time. Please wait...</div>
           </div>
     </div>
     <div class="fix_outer display_none" style="z-index: 1003;" id="audio_window_whole">
         <div class="setting_window">
-            <div class="audio_window_title">设置</div>
+            <div class="audio_window_title">Setting</div>
         <span id="audio_close_icon" class="glyphicon glyphicon-off" aria-hidden="true"  ></span>
           <div class="setting_window_content">
             <div class="audio_section">
-              <div class="audio_text"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>背景音乐</div>
+              <div class="audio_text"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>Background Music</div>
               <div class="audio_setting">
                   <audio controls="controls" id="backMusicAudio" autoplay="autoplay" loop="loop" >
                       <source id="backMusic" src="/static/moment/audio/back.mp3"  type="audio/mp3" />
@@ -77,7 +77,7 @@
               </div>
             </div>
             <div class="audio_section">
-                <div class="audio_text"><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>其他音效</div>
+                <div class="audio_text"><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>Other Sound</div>
                 <div class="audio_setting">
                     <audio controls="controls" id="specialMusicAudio">
                         <source id="specialMusic"  type="audio/mp3" />
@@ -87,22 +87,22 @@
 
               <div class="audio_section">
                 <div class="audio_text"><span class="glyphicon glyphicon-hourglass" aria-hidden="true"></span>
-                手动/自动模式
+                Speed Mode
                 </div>
                   <div class="audio_text">
                     <span class="glyphicon glyphicon-text-size" aria-hidden="true"></span>
-                    字符时间间隔
+                    Character Interval
                     <input type="text" class="auto_text_setting_letter" value="1000" id="character_interval"> ms
                   </div>
                   <div class="audio_text">
                       <span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span>
-                      句子时间间隔
+                      Sentence Interval
                       <input type="text" class="auto_text_setting_letter" value="1000" id="sentence_interval"> ms
                     </div>
                 </div>
                 
                 </div>
-                <div id="setting_confirm"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>确认</div>
+                <div id="setting_confirm"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Confirm</div>
           </div>
 
         </div>
@@ -127,26 +127,20 @@
       </div>
     </div>
     <div class="over_all" id="button_list_all" style="display: none">
-    <div style="  width: 800px;
-    padding: 10px;
-    height: 50px;
-    position: absolute;
-    margin-left: -400px;
-    top: 20%;
-    left: 50%;">
+    <div style="  width: 800px; padding: 10px; height: 50px; position: absolute; margin-left: -400px; top: 20%; left: 50%;">
         <div id="button_list" style="font-size: 3rem;position: absolute;width: 600px;margin-left: -300px;left: 50%;text-align: center;">
         </div>
-      </div>
+    </div>
     </div>
         
 
     <div  style="position:absolute;right: 5%; bottom: 1cm; z-index: 2;">
       <section>
-        <button class='lined thin'id="buttonBack" style="font-size: 2rem;">人生无悔</button>
-        <button class='dashed thin' id="onlySave" style="font-size: 2rem;">保存</button>
-        <button class='dashed thin' id="main_store" style="font-size: 2rem;">成就与商店</button>
-        <button class='dashed thin' id="buttonSave" style="font-size: 2rem;">切换存档</button>
-        <button class='dashed thin' id="buttonLogout" style="font-size: 2rem;">退出游戏</button>
+        <button class='lined thin'id="buttonBack" style="font-size: 2rem;">No Back</button>
+        <button class='dashed thin' id="onlySave" style="font-size: 2rem;">Save</button>
+        <button class='dashed thin' id="main_store" style="font-size: 2rem;">Achievement and Store</button>
+        <button class='dashed thin' id="buttonSave" style="font-size: 2rem;">Archive</button>
+        <button class='dashed thin' id="buttonLogout" style="font-size: 2rem;">Logout</button>
         <!-- <button class='dashed thin' id="comment_card_button" style="font-size: 2rem;">小灰屋里的卡片</button> -->
       </section>
     </div>
@@ -295,22 +289,22 @@
         <div style="display: inline;">
             <div>
               <nav style="z-index: 800;">
-                  <span id="Arch" >存档</span>
-                  <span id="archive">名片</span>
-                  <span id="store_card">图鉴</span>
-                  <span id="gift">旅行与礼物</span>
-                  <span id="shopping">商店</span>  
+                  <span id="Arch" >Archive</span>
+                  <span id="archive">Namecard</span>
+                  <span id="store_card">Handbook</span>
+                  <span id="gift">Trip</span>
+                  <span id="shopping">Store</span>  
                   <span id="process_close" style="float: right;"><i class="glyphicon glyphicon-off" aria-hidden="true" ></i></span>
               </nav>
               <div class="button_list_icon_process" id="process_drop_down_arch"style="z-index: 500;">
               <div class="icon_circle" id="no1arch">
-                  <a>壹</a>
+                  <a>1</a>
               </div>
               <div class="icon_circle" id="no2arch">
-                  <a>贰</a>
+                  <a>2</a>
               </div>
               <div class="icon_circle" id="no3arch">
-                  <a>叁</a>
+                  <a>3</a>
               </div>
             </div>
             <div id="content"  style="position: absolute; top: 10%;left: 10%;right: 10%; z-index: 500;">
@@ -361,7 +355,7 @@
       <img class="new_money" src="/static/moment/image/element/lucky_money.png">
       <div class="new_money_value">
         <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>
-        获得金钱值：<span id="new_money_value"></span>
+        Gain Money：<span id="new_money_value"></span>
       </div>
     </div>
     <div class="over_all display_none" id="flip_icon" style="z-index: 1000">
@@ -401,14 +395,14 @@
 
       <div class="fix_outer display_none" style="z-index: 999;" id="cart_over">
       <div class="add_cart">
-        <div class="add_cart_bar add_cart_bar_top">购物车 <i id="cart_over_close" class="glyphicon glyphicon-off" aria-hidden="true" style="float: right;" ></i></div>
+        <div class="add_cart_bar add_cart_bar_top">Shopping Cart <i id="cart_over_close" class="glyphicon glyphicon-off" aria-hidden="true" style="float: right;" ></i></div>
         <div class="add_card_title">
             <input class="product_check_box_item" type="checkbox" id="all_check_box"/>
-          <div class="product_name add_cart_height_hund">商品名称</div>
-          <div class="product_number add_cart_height_hund">数量</div>
-          <div class="product_unit_money add_cart_height_hund">单价</div>
-          <div class="product_unit_total_money add_cart_height_hund">总价</div>
-          <div class="product_cancel add_cart_height_hund">取消</div>
+          <div class="product_name add_cart_height_hund">Product</div>
+          <div class="product_number add_cart_height_hund">Quantity</div>
+          <div class="product_unit_money add_cart_height_hund">Price</div>
+          <div class="product_unit_total_money add_cart_height_hund">Total</div>
+          <div class="product_cancel add_cart_height_hund">Cancel</div>
         </div>
         <div class="product_section_container" id="product_section_container">
 <!--           <div class="add_card_title border_cart">
@@ -445,7 +439,7 @@
         <div class="product_checkout border_cart">
           <div class="product_total_money">Total: <span id="product_total_money">0</span></div>
         </div>
-        <div class="checkout_btn" id="checkout_btn">√ 结算</div>
+        <div class="checkout_btn" id="checkout_btn">√ Check out</div>
       </div>
     </div>
 
@@ -460,8 +454,8 @@
               <div class="promote_content" id="promote_content"></div>
               <div class="promote_btn_list">
               <section>
-                  <button class='dashed thin promote_btn' id="promote_cancel_btn">取消</button>
-                  <button class='dashed thin promote_btn' id="promote_confirm_btn">确定</button>
+                  <button class='dashed thin promote_btn' id="promote_cancel_btn">Cancel</button>
+                  <button class='dashed thin promote_btn' id="promote_confirm_btn">Confirm</button>
               </section>
             </div>
             </div>
@@ -481,7 +475,7 @@
               <div class="promote_content" id="hint_content"></div>
               <div class="promote_btn_list">
                 <section>
-                    <button class='dashed thin promote_btn' id="hint_cancel_btn">确定</button>
+                    <button class='dashed thin promote_btn' id="hint_cancel_btn">Confirm</button>
                 </section>
               </div>
             </div>
@@ -492,31 +486,12 @@
 
       <div class="fix_outer display_none" id="own_window_whole" style="z-index: 999;">
           <div class="own_window">
-            <div class="own_window_title">物品架</div>
+            <div class="own_window_title">Shelf</div>
               <i id="own_close_icon" class="glyphicon glyphicon-off" aria-hidden="true" style="float: right;position: absolute;top: 10px;right: 10px;" ></i>
-            <div class="own_window_content" id="own_window_content">
-                <!-- <div class="own_section">
-                  <div class="own_img_container">
-                    <img class="own_img"src="/static/moment/image/test/cantin.jpg">
-                  </div>
-                  <div class="own_text">
-                  <div class="own_title">我在这里</div>
-                  <div class="own_amount"><span class="glyphicon glyphicon-stats" aria-hidden="true" ></span>已拥有数量：<span>200</span></div>
-                  </div>
-                  <div class="own_btn_list">
-                      <section>
-                          <button class='dashed thin own_btn' id="own_illustration_btn">详情</button>
-                          <button class='dashed thin own_btn' id="own_use_btn">使用</button>
-                      </section>
-                    </div>
-                </div> -->
-                
+              <div class="own_window_content" id="own_window_content">
             </div>
           </div>
         </div>
-
-
-
     <div class="overlay_whole"></div>
     <div class="overlay_whole_process"></div>
     <div class="overlay_whole_SC"></div>
