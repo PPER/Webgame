@@ -88,7 +88,7 @@ var newPersonRepo={};
                                 $("#sentence_interval").val(senVal).change();
                                 characterInterval=chaVal;
                                 sentenceInterval=senVal;
-                                document.getElementById("hint_title").innerHTML="【系统提示】";
+                                document.getElementById("hint_title").innerHTML="【System Prompt】";
                                 document.getElementById("hint_content").innerHTML="更改成功！";
                                 $("#hint_window_whole").toggle();
                             },
@@ -98,7 +98,7 @@ var newPersonRepo={};
                         })
                     }
                     else{
-                        document.getElementById("hint_title").innerHTML="【系统提示】";
+                        document.getElementById("hint_title").innerHTML="【System Prompt】";
                         document.getElementById("hint_content").innerHTML="您输入了非法数值，请输入大于0的数值。非整数字符将会自动转为整数值。";
                         $("#hint_window_whole").toggle();
                     }
@@ -282,7 +282,7 @@ var newPersonRepo={};
             if (specialSaveSenMark==0)currentSentenceNumberValue=curSenNum-1;//因为每次点击出来都会+1
             else currentSentenceNumberValue=specialSaveSenNum;
             date=new Date()
-            dateString=date.getFullYear().toString()+"年"+date.getMonth().toString()+"月"+date.getDate().toString()+"日 "+date.getHours().toString()+":"+date.getMinutes().toString();
+            dateString=date.getFullYear().toString()+"/"+date.getMonth().toString()+"/"+date.getDate().toString()+"  "+date.getHours().toString()+":"+date.getMinutes().toString();
             post_data={ activeState:1,
                 currentArchiveId:tempRecord["currentArchiveId"],
                 currentSentenceNumber:tempRecord["currentSentenceNumber"] ,
@@ -372,7 +372,7 @@ var newPersonRepo={};
                 }
                 __pop();
             }
-            if (Record.length<=1)document.getElementById("buttonBack").innerHTML="人生无悔";
+            if (Record.length<=1)document.getElementById("buttonBack").innerHTML="No Back";
         }
         else {
             if (newPersonRepo[""+Record.length]){
@@ -422,7 +422,7 @@ var newPersonRepo={};
                         postData["current_money"]=Human_repo[human_name].money;
                         postData["current_love"]=Human_repo[human_name].love; */
                         date=new Date()
-                        dateString=date.getFullYear().toString()+"年"+date.getMonth().toString()+"月"+date.getDate().toString()+"日 "+date.getHours().toString()+":"+date.getMinutes().toString();
+                        dateString=date.getFullYear().toString()+"/"+date.getMonth().toString()+"/"+date.getDate().toString()+"  "+date.getHours().toString()+":"+date.getMinutes().toString();
                         postData["date"]=dateString;
                         //存到数据
                         $.ajax({
@@ -513,7 +513,7 @@ var newPersonRepo={};
         document.getElementById("film_content").innerHTML=" ";
         if (Record.length>=1)document.getElementById("buttonBack").innerHTML="人生重来一次";
         if (Record.length<1){
-            document.getElementById("buttonBack").innerHTML="人生无悔";
+            document.getElementById("buttonBack").innerHTML="No Back";
         }
         if (GT_repo.length<1)GT_repo.push("GT"); //back按钮回退的不要加新的GT记录
         if (NC_repo.length<1)NC_repo.push("NC"); //back按钮回退的不要加新的NC记录
@@ -603,7 +603,7 @@ var newPersonRepo={};
         document.getElementById("film_content").innerHTML=" ";
         if (Record.length>=1)document.getElementById("buttonBack").innerHTML="人生重来一次";
         if (Record.length<1){
-            document.getElementById("buttonBack").innerHTML="人生无悔";
+            document.getElementById("buttonBack").innerHTML="No Back";
         }
         GT_repo.push("GT");
         NC_repo.push("NC");
@@ -621,7 +621,7 @@ var newPersonRepo={};
         document.getElementById("film_content").innerHTML=" ";
         if (Record.length>=1)document.getElementById("buttonBack").innerHTML="人生重来一次";
         if (Record.length<1){
-            document.getElementById("buttonBack").innerHTML="人生无悔";
+            document.getElementById("buttonBack").innerHTML="No Back";
         }
         GT_repo.push("GT");
         NC_repo.push("NC");
@@ -793,15 +793,15 @@ var newPersonRepo={};
         hint.style.fontWeight="300";
         switch(curWordsRepo[curSenNum][1]){
             case "m":
-                hint.innerHTML="[系统提示]  您收到了一条新消息。"+curWordsRepo[curSenNum].slice(2);
+                hint.innerHTML="[System Prompt]  您收到了一条新消息。"+curWordsRepo[curSenNum].slice(2);
                 hint.style.color="#005757";
                 break;
             case "p":
-                hint.innerHTML="[系统提示]  角色属性改变："+curWordsRepo[curSenNum].slice(2);
+                hint.innerHTML="[System Prompt]  角色属性改变："+curWordsRepo[curSenNum].slice(2);
                 hint.style.color="#E65540";
                 break;
             case "t":
-                hint.innerHTML="[系统提示]  获得新成就："+curWordsRepo[curSenNum].slice(2);
+                hint.innerHTML="[System Prompt]  获得新成就："+curWordsRepo[curSenNum].slice(2);
                 hint.style.color="#484891";
                 break;
         }
@@ -1042,7 +1042,7 @@ var newPersonRepo={};
                         autoInt=setInterval(selectRepo,100);
                     }
                 })
-                document.getElementById("hint_title").innerHTML="【系统提示】";
+                document.getElementById("hint_title").innerHTML="【System Prompt】";
                 document.getElementById("hint_content").innerHTML="新成就达成( •̀ ω •́ )y 恭喜您获得1张"+prores["rank"]+"级别新图鉴“"+prores["title"]+"”，已存入本存档，可在【成就与商店】->【图鉴】页面查看。";
                 $("#hint_window_whole").toggle();
             },
@@ -1183,10 +1183,10 @@ var newPersonRepo={};
                     repoStatus="t";
                     specialSaveSenMark=0;
                     nameTag=strip(curWordsRepo[curSenNum].slice(1));
-                    if (nameTag.includes("...") || nameTag.includes("我") || nameTag.includes("PP") || nameTag.includes("Zoe") || nameTag.includes("2019年"))document.getElementById("story_words_tag").style.color="#4F4F4F";
+                    if (nameTag.includes("...") || nameTag.includes("我") || nameTag.includes("PP") || nameTag.includes("Zoe") || nameTag.includes("2019/"))document.getElementById("story_words_tag").style.color="#4F4F4F";
                     else document.getElementById("story_words_tag").style.color="black";
                     document.getElementById("story_words_tag").innerHTML=nameTag;
-                    if (nameTag=="..." || nameTag=="我" || nameTag.includes("2019年") || nameTag.includes("PP") || nameTag.includes("Zoe"))document.getElementById("story_words").style.color="#4F4F4F";
+                    if (nameTag=="..." || nameTag=="我" || nameTag.includes("2019/") || nameTag.includes("PP") || nameTag.includes("Zoe"))document.getElementById("story_words").style.color="#4F4F4F";
                     else document.getElementById("story_words").style.color="black";
                     curSenNum++; 
                     break;
@@ -1352,7 +1352,7 @@ function saveArch(){
     else currentSentenceNumberValue=specialSaveSenNum;
     if (continueMark==1)currentSentenceNumberValue=_curSenNum;
     date=new Date()
-    dateString=date.getFullYear().toString()+"年"+date.getMonth().toString()+"月"+date.getDate().toString()+"日 "+date.getHours().toString()+":"+date.getMinutes().toString();
+    dateString=date.getFullYear().toString()+"/"+date.getMonth().toString()+"/"+date.getDate().toString()+"  "+date.getHours().toString()+":"+date.getMinutes().toString();
     post_data={ activeState:1,
         currentArchiveId:__currentArchiveId,
         currentSentenceNumber:currentSentenceNumberValue,
@@ -1409,7 +1409,7 @@ function saveArch(){
 }
 document.getElementById("buttonSave").onclick=(function(){
     $("#promote_window_whole").toggle();
-    document.getElementById("promote_title").innerHTML="【系统提示】";
+    document.getElementById("promote_title").innerHTML="【System Prompt】";
     document.getElementById("promote_content").innerHTML="您的存档已自动保存，\n点击【确定】前往存档馆（可切换存档） \n点击【取消】继续游戏( •̀ ω •́ )y";
     document.getElementById("promote_cancel_btn").onclick=(function(){
         $("#promote_window_whole").toggle();
@@ -1458,7 +1458,7 @@ document.getElementById("audio_close_icon").onclick=(function(){
 
 //保存
 document.getElementById("onlySave").onclick=(function(){
-    document.getElementById("hint_title").innerHTML="【系统提示】";
+    document.getElementById("hint_title").innerHTML="【System Prompt】";
     document.getElementById("hint_content").innerHTML="保存成功，欢迎继续游戏~O(∩_∩)O";
     $("#hint_window_whole").toggle();
     saveArch();

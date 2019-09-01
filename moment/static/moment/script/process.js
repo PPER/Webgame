@@ -225,7 +225,7 @@ $(document).ready(function (){
                     document.getElementById("checkout_btn").onclick=(function(){
                         total_consum=product_unit_total["total"];
                         if (total_consum==0){
-                            document.getElementById("hint_title").innerHTML="【系统提示】";
+                            document.getElementById("hint_title").innerHTML="【System Prompt】";
                             document.getElementById("hint_content").innerHTML="您未选中任何商品，请购物后再结算。";
                             $("#hint_window_whole").toggle();
                             return 0;
@@ -490,7 +490,7 @@ $(document).ready(function (){
                         button1=document.createElement("button");
                         button1.className="dashed thin add_cart_btn";
                         button1.id="shopping_cart_add_cart"+i;
-                        button1.innerHTML="加入购物车";
+                        button1.innerHTML="Add to cart";
                         button1.onclick=(function(arg,res){
                             return function(){
                                 index=arg;
@@ -505,7 +505,7 @@ $(document).ready(function (){
                         button2=document.createElement("button");
                         button2.className="dashed thin add_cart_btn";
                         button2.id="shopping_cart_buy"+i;
-                        button2.innerHTML="立即购买";
+                        button2.innerHTML="Buy now";
                         button2.onclick=(function(arg,res){
                             return function(){
                                 _index=arg;
@@ -575,7 +575,7 @@ $(document).ready(function (){
         if(eixst){
             //console.log("item exist");
             var val = parseInt($("#shopping_cart_text"+index).val());
-            //console.log("加入购物车的个数："+val);
+            //console.log("Add to cart的个数："+val);
             initval = parseInt($("#shopping_cart_text_item"+index).val());
             //console.log("原本个数"+initval);
             $("#shopping_cart_text_item"+index).val(val + initval).change();
@@ -1069,7 +1069,7 @@ $(document).ready(function (){
                     if (objectAmount==0){
                         div=document.createElement("div");
                         div.className="none_data"
-                        div.innerHTML="暂无数据";
+                        div.innerHTML=" No Record";
                         contentHtml.appendChild(div);
                     }
                     for(i=1;i<=objectAmount;i++){
@@ -1152,7 +1152,7 @@ $(document).ready(function (){
                     if (objectAmount==0){
                         div=document.createElement("div");
                         div.className="none_data"
-                        div.innerHTML="暂无数据";
+                        div.innerHTML=" No Record";
                         contentHtml.appendChild(div);
                     }
                     for(i=1;i<=objectAmount;i++){

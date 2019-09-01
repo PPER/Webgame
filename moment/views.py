@@ -158,8 +158,8 @@ def galcate(request):
             whether_load["whether_load_content"+"%d"%load_index]=archive.last_sentence
         if active_value==0:
             whether_load["whether_load"+"%d"%load_index]="CREAT"
-            whether_load["whether_load_hint"+"%d"%load_index]="尚未有存档"
-            whether_load["whether_load_content"+"%d"%load_index]="点击按钮开启故事"
+            whether_load["whether_load_hint"+"%d"%load_index]="New Archive"
+            whether_load["whether_load_content"+"%d"%load_index]="Click create to start the game."
     template = loader.get_template('moment/galcate.html')
     return HttpResponse(template.render(whether_load, request))
 

@@ -36,12 +36,12 @@
         <label>
           <span>Username</span>
           <div class="error_hint" id="sign_in_username_error" style=" color: #E65540;"></div>
-          <input key="unique" type="text"  v-validate="'required|alpha_dash|max:150'" data-vv-scope="sign_in"  name="username_in" id="sign_in_username"/>
+          <input key="unique" type="text"  data-vv-scope="sign_in"  name="username_in" id="sign_in_username"/>
         </label>
         <label>
           <span>Password</span>
           <div class="error_hint" id="sign_in_password_error" style=" color: #E65540;"></div>
-          <input key="unique" type="password" name="password_in" v-validate="'required|alpha_dash|max:150'" data-vv-scope="sign_in" id="sign_in_password"/>
+          <input key="unique" type="password" name="password_in"  data-vv-scope="sign_in" id="sign_in_password"/>
         </label>
         <div style="align-items: center; display: block; margin-top:5rem;">
         <section style="justify-content: center; ">
@@ -71,17 +71,17 @@
           <label>        
             <span>Username</span> 
             <div class="error_hint" id="sign_up_username_error" >Can contain Arabic numerals, upper and lower case letters, underline; Length not exceeding 150 characters.</div>
-            <input key="unique" type="text" name="username_up" v-validate="'required|alpha_dash|max:150'" data-vv-scope="sign_up" id="sign_up_username" />           
+            <input key="unique" type="text" name="username_up" data-vv-scope="sign_up" id="sign_up_username" />           
           </label>
           <label>
             <span>Email</span>
             <div class="error_hint" id="sign_up_email_error">We will protect your privacy.</div>
-            <input key="unique" type="email"  v-validate="'required|email'" data-vv-scope="sign_up" name="email_up" id="sign_up_email"/>
+            <input key="unique" type="email"  data-vv-scope="sign_up" name="email_up" id="sign_up_email"/>
           </label>
           <label>
             <span>Password</span>
-            <div class="error_hint" id="sign_up_password_error">Can contain Arabic numerals, upper and lower case letters, underline; Length not exceeding 150 characters.</div>
-            <input key="unique" type="password" name="password_up" v-validate="'required|alpha_dash|max:20'" data-vv-scope="sign_up" id="sign_up_password" />
+            <div class="error_hint" id="sign_up_password_error">contain at least one numeric digit and a special character(!@#$%^&*). Length not exceeding 150.</div>
+            <input key="unique" type="password" name="password_up"  data-vv-scope="sign_up" id="sign_up_password" />
           </label>
           <div style="align-items: center; display: block; margin: 0 auto;">
                 <section style="justify-content: center; margin-top: 2rem">
@@ -89,7 +89,7 @@
                     <span class="invite_title">Invite Code</span> 
                     <input id="invite_code" placeholder="Click"  type="text" name="invite_code" />  
                   </span> 
-                <button type="submit" class='lined thin' v-on:click="onSignUp">Sign up and login</button>
+                <button type="submit" class='lined thin' id="signup_btn">Sign up and login</button>
             </section> 
             </div> 
         </div>
@@ -100,10 +100,6 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/static/moment/script/login.js"></script>
+    <script type="text/javascript" src="/static/moment/script/validate.js"></script>
   </body>
 </html>
- 
-
-
-

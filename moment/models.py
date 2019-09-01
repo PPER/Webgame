@@ -18,7 +18,7 @@ class Current_Archive(models.Model):
 
 class Story_File_Status(models.Model):
     user=models.ForeignKey(User, on_delete=models.CASCADE)
-    date=models.CharField(max_length=50,default="未知日期")
+    date=models.CharField(max_length=50,default="Unknow Date")
     archive_id = models.IntegerField(default=1)
     active_value= models.IntegerField(default=0)
     file_dir=models.CharField(max_length=200,default="/static/moment/story/1")

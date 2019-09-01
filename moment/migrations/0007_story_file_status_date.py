@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='story_file_status',
             name='date',
-            field=models.CharField(default='未知日期', max_length=50),
+            field=models.CharField(default='Unknow Date', max_length=50),
         ),
     ]

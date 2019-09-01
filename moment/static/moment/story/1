@@ -50,8 +50,8 @@ C
 v创建后可以跳出介绍页面(单击消失，不单击三秒后消失)
 c 
 fc/static/moment/image/figure/HGG/6.png
-@PIG#PIGEON#皮琼#白色生物#100#100#100#/static/moment/image/figure/HGG/up_walk_normal.png#头顶广平，身躯硕大而宽深，从嘴到尾端长53～56厘米，胸围38～40厘米，硕长而稍弯。成年后眼环为红色或肉红色，青年眼环粉红色。颈长而粗壮，背长而开阔，尾长而末端纯圆，大腿丰满，跗趾和趾较短。#/static/moment/image/figure/HGG/avatar.png#/static/moment/image/pic/places/DclassroomOutside1.jpg
-v姓名：皮琼；英文名：PIGEON；健康值：100； 好感度：100； 金钱值：100；详细介绍：头顶广平，身躯硕大而宽深，从嘴到尾端长53～56厘米，胸围38～40厘米，硕长而稍弯。成年后眼环为红色或肉红色，青年眼环粉红色。颈长而粗壮，背长而开阔，尾长而末端纯圆，大腿丰满，跗趾和趾较短； Reference: https://baike.baidu.com/item/%E9%B8%BD%E5%AD%90/1256?fr=aladdin
+@PIG#PIGEON#皮琼#白色生物#100#100#100#/static/moment/image/figure/HGG/up_walk_normal.png#头顶广平，身躯硕大而宽深，从嘴到尾端长53～56厘米，胸围38～40厘米，硕长而稍弯。成/后眼环为红色或肉红色，青/眼环粉红色。颈长而粗壮，背长而开阔，尾长而末端纯圆，大腿丰满，跗趾和趾较短。#/static/moment/image/figure/HGG/avatar.png#/static/moment/image/pic/places/DclassroomOutside1.jpg
+v姓名：皮琼；英文名：PIGEON；健康值：100； 好感度：100； 金钱值：100；详细介绍：头顶广平，身躯硕大而宽深，从嘴到尾端长53～56厘米，胸围38～40厘米，硕长而稍弯。成/后眼环为红色或肉红色，青/眼环粉红色。颈长而粗壮，背长而开阔，尾长而末端纯圆，大腿丰满，跗趾和趾较短； Reference: https://baike.baidu.com/item/%E9%B8%BD%E5%AD%90/1256?fr=aladdin
 C
 iPIG
 v创建后也可以不跳出介绍页面

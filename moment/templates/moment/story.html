@@ -46,7 +46,8 @@
   <body id="body_back" background="/static/moment/image/element/black.jpg" style=" background-repeat:no-repeat ; background-color: black; background-size:100% 100%; background-attachment: fixed; transition: background 0.5s ease-in-out;">
   
     <iframe src="/static/moment/audio/silence.mp3" style="display: none" allow="autoplay" id="audio"></iframe>
-    <div id="loading_section">
+    
+<!--     <div id="loading_section">
         <div class="load">
             <div class="hamburger">
               <div class="top-bun"></div>
@@ -62,7 +63,7 @@
             <h1>LOADING...</h1>
             <div class="loading_tag" id="loading_process">Loading pictures... It may take 2 minutes for the first time. Please wait...</div>
           </div>
-    </div>
+    </div> -->
     <div class="fix_outer display_none" style="z-index: 1003;" id="audio_window_whole">
         <div class="setting_window">
             <div class="audio_window_title">Setting</div>
@@ -169,24 +170,24 @@
         </div>
         <div class="col-md-6">
             <div id="profile_basic">
-                <div>名字：PP</div>
-                <div>年龄：20</div>
-                <div>简介：我又饿又菜只能把自己吃了.</div>
-                <div>游戏用户：{{current_username}}</div>
+                <div>Name：PP</div>
+                <div>Age：20</div>
+                <div>Intro：Go blue!.</div>
+                <div>Game User's username：{{current_username}}</div>
         </div>
       </div>
     </div>
-    <div class="text-overline"><span class="glyphicon glyphicon-search" aria-hidden="true">   目前成就</span></div>
+    <div class="text-overline"><span class="glyphicon glyphicon-search" aria-hidden="true">   Achievement</span></div>
   
   <div class="navlinks p-0 mt-4">
-    <div><level><span class="glyphicon glyphicon-tint" aria-hidden="true"></span>   健康值：<span id="current_health"></span><span class="badge badge-error" id="health_change">+66</span></level></div>
-    <div><level><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>   心情值：<span id="current_love"></span> <span class="badge badge-error" id="love_change">+34</span></level></div>
-    <div><level><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>   金钱值：<span id="current_money"></span> <span class="badge badge-error" id="money_change">+3<span></level></div>
+    <div><level><span class="glyphicon glyphicon-tint" aria-hidden="true"></span>   Health：<span id="current_health"></span><span class="badge badge-error" id="health_change">+66</span></level></div>
+    <div><level><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>   Mood：<span id="current_love"></span> <span class="badge badge-error" id="love_change">+34</span></level></div>
+    <div><level><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>   Money：<span id="current_money"></span> <span class="badge badge-error" id="money_change">+3<span></level></div>
   </div>
   <div style="position:absolute;right: 5%; bottom: 1cm;">
   <section>
-      <button class='lined thin'id="nav_guid" style="font-size: 2rem;">攻略</button>
-      <button class='dashed thin' id="nav_log_out" style="font-size: 2rem;">登出</button>
+      <button class='lined thin'id="nav_guid" style="font-size: 2rem;">Guid</button>
+      <button class='dashed thin' id="nav_log_out" style="font-size: 2rem;">Logout</button>
   </section>
 </div>
 </div>
@@ -222,7 +223,7 @@
   <span id="phone_icon" class="pop_up_cross"><a><i class="glyphicon glyphicon-off" aria-hidden="true" ></i></a></span>
   <div class="chat">
       <div class="chat-title">
-        <h2 id="contact_name" style="cursor: pointer;">【系统提示】</h2>
+        <h2 id="contact_name" style="cursor: pointer;">【System Prompt】</h2>
         <span>
             <a><i class="glyphicon glyphicon-comment" aria-hidden="true" id="chat_window_icon"></i></a>
         </span>
