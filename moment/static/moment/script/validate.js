@@ -8,10 +8,13 @@ function checkVal(elid,casenum){
     //pwd
     checkMark=1;
     if(casenum==1){
-        console.log("1");
+        //console.log("1");
         if (elid=="sign_in_password"){
-            document.getElementById("login_hint").innerHTML="Unvalid username or password.";
-            return 0;
+            if(!valueEl.match(pswd)){
+                console.log("psw");
+                document.getElementById("login_hint").innerHTML="Unvalid username or password.";
+                return 0;
+            }
         }
         if(!valueEl.match(pswd)){
             //document.getElementById("sign_up_password_error").innerHTML="Unvalid password! Characters which contain at least one numeric digit and a special character. Length not exceeding 150.";
@@ -21,10 +24,13 @@ function checkVal(elid,casenum){
     }
     else if(casenum==2) //username
     {
-        console.log("2");
+        //console.log("2");
         if (elid=="sign_in_username"){
-            document.getElementById("login_hint").innerHTML="Unvalid username or password."
-            return 0;
+            if(!valueEl.match(usn)){
+                console.log("usn");
+                document.getElementById("login_hint").innerHTML="Unvalid username or password."
+                return 0;
+            }    
         }
         if(!valueEl.match(usn)){
             document.getElementById("sign_up_username_error").innerHTML="Unvalid username! Only contains characters or digits. Length not exceeding 20.";
@@ -58,7 +64,7 @@ document.getElementById("login_btn").onclick=function(){
             success: function (res) {
                 response=JSON.parse(res);
                 if (response["msg"]=="invalid"){
-                  document.getElementById("login_hint").innerHTML="Unvalid username pr password";
+                  document.getElementById("login_hint").innerHTML="Unvalid username or password!";
                 }
                 if(response["msg"]=="ok")window.location.href="../galcate/";
                 

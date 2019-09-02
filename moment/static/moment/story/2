@@ -6,8 +6,8 @@ v来造点东西
 $/static/moment/image/pic/places/jyz.jpg#摸鱼#金鱼展#金鱼大的有点可怕，有点像那个呃中文是什么来着..Uncanny风格。当鱼真惨。#PAL#金鱼展#旅行#上海
 $/static/moment/image/pic/places/dfq.jpg#达芬奇老爷爷#达芬奇展#总之..就是很喜欢title fields很多的人，然后每个field都有造诣真是让人感叹..好像一直想成为的就是发明家呢。希望以后足够有钱，然后不断创造出新的东西，啊，是在太有意思了#PIG#达芬奇展#旅行#上海
 C
-v测试【人生重来一次】
-v可以先产生一个人，比如“巴鲁姆布斯”和产生一段旅行和一个聊天记录，然后等下【人生重来一次】会发现这些都消失了！！！
+v测试【Back】
+v可以先产生一个人，比如“巴鲁姆布斯”和产生一段旅行和一个聊天记录，然后等下【Back】会发现这些都消失了！！！
 v生产“巴鲁姆布斯”
 c
 @TUR#PALUMBUS#巴鲁姆布斯#黑色生物#200#300#400#/static/moment/image/figure/YXX/2.png#国家二级保护动物。喜欢住在在树上。肤色较黑，手臂边缘为白。眼睛淡粉色。活动于欧洲，不易驯养。#/static/moment/image/figure/YXX/avatar.png#/static/moment/image/pic/places/IMG_2685.JPG
@@ -30,7 +30,7 @@ v皮琼再来一条消息，返回后就没得了
 C
 c
 mPIG
-这是点击[人生重来一次]]后会消失的消息
+这是点击[Back]]后会消失的消息
 !m请点击右上角小人图标查看
 C
 v现在要back了！

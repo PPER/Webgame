@@ -27,6 +27,6 @@ urlpatterns = [
     path('galcate/', views.galcate, name='galcate'),
     path('read_archive_id/',views.read_archive_id,name='read_archive_id'),
     path('define_archive_id/',views.define_archive_id,name='define_archive_id'),
-    path('savearchive/',views.savearchive,name='savearchive'), #点击保存存档以后的处理
+    path('savearchive/',views.savearchive,name='savearchive'), #点击保存Archive以后的处理
     
 ]

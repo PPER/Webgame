@@ -1,0 +1,114 @@
+c 
+s/static/moment/audio/back3.mp3
+b/static/moment/image/pic/places/IMG_2721.jpg
+vWelcome to visual story demo
+C
+vThis is a new line~
+c 
+tName Tag
+vWe can change Name Tag(⊙o⊙)？
+C
+vWe can get a trigger of collection.
+uUnlock
+c
+tNPC
+fc/static/moment/image/figure/PP/up_ye_cute.png
+vWords and characters can show simutaneously. You can also costomize character pictures.
+C 
+c
+fcn 
+fl/static/moment/image/figure/PP/up_crossarmback_sorry.png
+vThe middle character disappeared and showed in the left.
+C 
+c 
+fr/static/moment/image/figure/PP/up_expected_stupid.png
+vThe characters can show in three different positions and they can show in multiple positions at the same time.
+C
+c 
+fln
+frn
+vLet's change back music( •̀ ω •́ )y
+s/static/moment/audio/back2.mp3
+C
+c 
+fln
+frn
+S/static/moment/audio/hb/runaway.WAV
+vWe can add another sound effect or music above it.
+C
+vWe can go into film mode
+cf
+v)Here is the film mode
+ff/static/moment/image/pic/places/yulanyuan1.jpg
+v)Exit the film mode
+Cf
+vYou can click Setting bottom to adjust sound and speed. (The third button on the top right.)
+vIf you have adjusted the speed in Setting. You can feel the speed of this paragraph changes.
+c 
+vWe can add characters.(Health/Mood/Money, Introduction, name, pictures, avatar can be costomized). We create "Jason" and "Zoey" for demo.
+C 
+vYou can choose to pop out introduction page(Single click to make it disappear. It will disappear automatically after 3 sec if user doesn't do any operation)
+c 
+fc/static/moment/image/figure/HGG/6.png
+@PIG#PIGEON#Jason#Student#100#100#200#/static/moment/image/figure/HGG/up_walk_normal.png#An international student with high IQ. Wanna seek for software development internship. He was rejected for thousands of time because he didn't take any upper level course in UM as a first-year transfer student. #/static/moment/image/figure/HGG/avatar.png#/static/moment/image/pic/places/DclassroomOutside1.jpg
+vA new character created.  Name: Jason Lee; Position: Student; Health: 100; Love: 100; Money:100; Introduction：An international student with high IQ. Wanna seek for software development internship. He was rejected for thousands of time because he didn't take any upper level course in UM as a first-year transfer student. 
+C
+iPIG
+vYou can also create a character without introduction page popping out.
+c 
+fc/static/moment/image/figure/YJQ/19.png
+@PAL#TURTLEDOVE#Zoey#Singer#100#150#100#/static/moment/image/figure/YJQ/10.png#A pop singer in University of Michigan. She is outgoing and willing to help others. Hence, she has a lot of friends. #/static/moment/image/figure/YJQ/avatar.png#/static/moment/image/pic/places/IMG_2685.JPG
+vA new character created.  Name: Zoey; Position: Singer; Health:100; Love:150; Money:100; Introduction:A pop singer in University of Michigan. She is outgoing and willing to help others. Hence, she has a lot of friends.
+C
+vYou can set character to talk to users. Users can also talk to characters by clicking the second button on the top right. Though they may not reply :) I'm working on the auto-reply API and self-reply feature. 
+vLet's try to make character send messages to the user.
+c
+mPIG
+I'm hungry. I miss the hamburger in Bursley.
+!mPlease click the small icon(1 person) to see it.
+C
+vYou can trigger any changes of attribute values(Health/Mood/Money/Love) of characters or users through the game.
+c
+r7 
+*PAL
+l+50
+*e
+*PP
+l+50
+m+30
+*e
+!pZoey's Love+50;Gain mood reward+50，money reward+30
+C
+c 
+fcn
+vYou can buid branches for multi-storylines.
+C
+vThe number and content of selection button can be costomized. We define two buttons now for demo. There are two syntaxes for jumping into next story script (either jump into new script file or different lines in the same script file. See details in the Development Doc)
+a2
+j92
+jump into the different line in this script file
+/static/moment/story/2_eng
+Jump into new script file.
+vThe script file is still /static/moment/story/1_eng.
+c 
+tNPC
+b/static/moment/image/pic/places/IMG_2838.jpg
+fc/static/moment/image/figure/PP/up_expected_smile.png
+vNow let's test auto mode.
+C 
+vYou can see a small triangle in the bottom of this talk bubble.
+vClick it to start auto.
+c 
+fc/static/moment/image/figure/PP/up_expected_stupid.png
+vIf you can start auto mode, you may see following sentences will jump out automatically.
+C
+c 
+fc/static/moment/image/figure/PP/up_crossarmback_sorry.png
+vThis line is for auto mode test :) (Jump out automatically
+C
+vThis line is still for auto mode test :) (Jump out automatically
+vYou can stop auto mode by clicking the same button if you want.
+c 
+fcn 
+vThis "storyline" has finished. You can click "Back" to return to the previous selection section or click "Archive" to change into a new archive or "Logout" to exit the game.
+C

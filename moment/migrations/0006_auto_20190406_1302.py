@@ -23,7 +23,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='story_file_status',
             name='last_sentence',
-            field=models.CharField(default='本存档尚未开启，请点击按钮建立', max_length=200),
+            field=models.CharField(default='本Archive尚未开启，请点击按钮建立', max_length=200),
         ),
         migrations.AddField(
             model_name='story_file_status',

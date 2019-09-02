@@ -1,0 +1,36 @@
+b/static/moment/image/pic/places/DclassroomOutside1.jpg
+vIt's new script file (/static/moment/story/2_eng) now. The backgroud is set to change for better illustration. You can also keep the same backgroud pic when you start a new script file.
+vWhy not take a look of "Achievement"? Just click "Achievement and Store". You may come back later. 
+c 
+vOh, you may see "No Record" in "Trip". So sad. Don't worry! Let's script to create some game record.
+$/static/moment/image/pic/places/jyz.jpg#Fish Fish#A goldfish show#Today I hung out with beatiful girl, Zoey! It's the biggest goldfish I have ever seen. They seemed uncanny.#PAL#Fish Show#Travel#Shanghai,China
+$/static/moment/image/pic/places/dfq.jpg#Leonardo da Vinci#da Vinci Art Show#People who have broad interest and step into different fields are so cool and brilliant! I love it. A nice day with Jason.#PIG#Show#Trip#Shanghai,CN
+C
+vNow take a further understanding of "Back" Button(on the bottom of the screen).
+vWe can first create a character in this scale and create some trip achievements, chats. Then you may see those records are also deleted when the user clicks the "Back".
+vNow we create the new character "Joey" first.
+c
+@TUR#PALUMBUS#Joey#Hacker#200#300#400#/static/moment/image/figure/YXX/2.png#A girl who is interested in cyber security and hack into umich server last month.#/static/moment/image/figure/YXX/avatar.png#/static/moment/image/pic/places/IMG_2685.JPG
+$/static/moment/image/pic/places/dormF1Inside.JPG#Sleep in the dorm#After finals.#I'm so tired today....Joey and I just wanna sleep in th dorm after finals...#TUR#Relax#Nothing#Happy
+C
+c 
+mTUR
+Welcome to the University of Michgan!
+!mPlease click the small icon(1 person) to see it.
+C
+c 
+fc/static/moment/image/figure/YXX/13.png
+tJoey
+vHello, I'm Joey. You can first check /Chat box/Trip/Namecard/ to see new changes. If click the "Back" button. You will see all those are gone. I will disappear as well! Wait!!! Please click when there is a signal to let you click.
+C
+c 
+fcn
+tNPC
+vLet's make Jason to send a new message, and it will be deleted as well.
+C
+c
+mPIG
+This is a message which will be deleted if the user clicks "Back".
+!mPlease click the small icon(1 person) to see it.
+C
+vClick the "Back" now! And check /Chat box/Trip/Namecard/ to see changes~

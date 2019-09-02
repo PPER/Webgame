@@ -7,7 +7,7 @@ $(document).ready(function (){
     var archiveID;
     var redefineMark=0;
     var _autoMode=false;
-    //读取存档号
+    //读取Archive号
     $.ajax({
         url: '/moment/read_archive_id/',
         type: 'post',
@@ -104,7 +104,7 @@ $(document).ready(function (){
     });
 
    
-    //存档
+    //Archive
     document.getElementById("Arch").onclick=(function(){
         $("#process_drop_down_arch").toggle();
     })
@@ -149,9 +149,11 @@ $(document).ready(function (){
     })
     document.getElementById("hint_close_icon").onclick=(function(){
         $("#hint_window_whole").toggle();
+        document.getElementById("hint_img").src="/static/moment/image/figure/pink04.png";
     })
     document.getElementById("hint_cancel_btn").onclick=(function(){
         $("#hint_window_whole").toggle();
+        document.getElementById("hint_img").src="/static/moment/image/figure/pink04.png";
     })
     //物品架关闭
     document.getElementById("own_close_icon").onclick=(function(){
@@ -226,22 +228,22 @@ $(document).ready(function (){
                         total_consum=product_unit_total["total"];
                         if (total_consum==0){
                             document.getElementById("hint_title").innerHTML="【System Prompt】";
-                            document.getElementById("hint_content").innerHTML="您未选中任何商品，请购物后再结算。";
+                            document.getElementById("hint_content").innerHTML="The shopping cart is empty.";
                             $("#hint_window_whole").toggle();
                             return 0;
                         }
                         _pp_money=getMoney();
                         if (total_consum>_pp_money){
-                            document.getElementById("hint_title").innerHTML="【购物提示】";
-                            document.getElementById("hint_content").innerHTML="抱歉，您存档【"+archiveID+"】内金钱值不足，请继续游戏获得金钱再来购买┭┮﹏┭┮";
+                            document.getElementById("hint_title").innerHTML="【Shopping Confirmation】";
+                            document.getElementById("hint_content").innerHTML="Sorry，Money is not enough in Archive【"+archiveID+"】. Maybe you can continue the game to gain more money and the come back┭┮﹏┭┮";
                             $("#hint_window_whole").toggle();
                             return 0;
                         }
 
                         $("#promote_window_whole").toggle();
                         //console.log("结算拉");
-                        document.getElementById("promote_title").innerHTML="【购物提示】";
-                        document.getElementById("promote_content").innerHTML="您将消耗存档【"+archiveID+"】内的"+total_consum+"点金钱值购买购物车内所有物品。返回游戏后若点击【人生重来一次】按钮回退，该部分金钱将不会返还，物品保留，但可能因此进入破产剧情线。<br>是否确认购买?";
+                        document.getElementById("promote_title").innerHTML="【Shopping Confirmation】";
+                        document.getElementById("promote_content").innerHTML="Are you sure to cost "+total_consum+" Money in Archive【"+archiveID+"】to buy all products in the shopping cart? If you click【Back】, money will not be returned, but the product pursued now will keep. However, you may go into the bankrupt storyline and fail the game. <br>Do you still want to buy them?";
                         document.getElementById("promote_cancel_btn").onclick=(function(){
                             $("#promote_window_whole").toggle();
                         })
@@ -257,8 +259,8 @@ $(document).ready(function (){
                                     if (eixst && product_unit_total[key]!=0){
                                         amount=$("#shopping_cart_text_item"+key).val();
                                         if (j==0){
-                                            _product=_product+amount+"件"+response["title"+key];
-                                        } else _product=_product+","+amount+"件"+ response["title"+key];
+                                            _product=_product+amount+" "+response["title"+key];
+                                        } else _product=_product+","+amount+" "+ response["title"+key];
                                         addProductAmount(amount,response["title"+key]);
                                         element = document.getElementById("add_card_item"+key);
                                         element.parentNode.removeChild(element);
@@ -268,8 +270,8 @@ $(document).ready(function (){
                                         j=j+1;
                                     }
                                 }
-                                document.getElementById("hint_title").innerHTML="【谢谢光临】";
-                                document.getElementById("hint_content").innerHTML="购买成功！存档【"+archiveID+"】新增物品："+_product+ "。<br>ps:返回游戏后若点击【人生重来一次】按钮回退，该部分金钱将不会返还，物品保留，但可能因此进入破产剧情线。";
+                                document.getElementById("hint_title").innerHTML="【Welcome】";
+                                document.getElementById("hint_content").innerHTML="Shopping Success！New item " +_product+" in Archive【"+archiveID+"】. <br>ps:If you click【Back】, money will not be returned, but the product pursued now will keep. However, you may go into the bankrupt storyline and fail the game.";
                                 $("#hint_window_whole").toggle();  
                             } 
                             
@@ -331,7 +333,7 @@ $(document).ready(function (){
                                     span1=document.createElement("span");
                                     span1.className="glyphicon glyphicon-stats";
                                     span2=document.createElement("span");
-                                    span2.innerHTML=" 已拥有数量：";
+                                    span2.innerHTML=" Qty. ：";
                                     span3=document.createElement("span");
                                     span3.id="own_amount_inner"+owni;
                                     span3.innerHTML=res["amount"+owni];
@@ -346,25 +348,26 @@ $(document).ready(function (){
                                     button1=document.createElement("button");
                                     button1.className='dashed thin own_btn';
                                     button1.id="own_illustration_btn"+owni;
-                                    button1.innerHTML="详情";
+                                    button1.innerHTML="Detail";
                                     button1.onclick=(function(arg,res){
                                         return function(){
                                             document.getElementById("hint_title").innerHTML="【"+res["title"+arg]+"】";
                                             document.getElementById("hint_img").src=res["image"+arg];
-                                            document.getElementById("hint_content").innerHTML=res["illustration"+arg]+"<br>单价："+res["money"+arg];
+                                            document.getElementById("hint_content").innerHTML=res["illustration"+arg]+"<br>Unit price："+res["money"+arg];
                                             $("#hint_window_whole").toggle();
                                         }
                                     }(owni,res))
                                     button2=document.createElement("button");
                                     button2.className='dashed thin own_btn';
                                     button2.id="own_use_btn"+owni;
-                                    button2.innerHTML="使用";
+                                    button2.innerHTML="Use";
                                     button2.onclick=(function(arg,res){
                                         return function(){
                                             if(parseInt(res["amount"+arg])>=1){
                                                 $("#promote_window_whole").toggle();
-                                                document.getElementById("promote_title").innerHTML="【使用提示】";
-                                                document.getElementById("promote_content").innerHTML="您将使用存档【"+archiveID+"】内的"+res["title"+arg]+"。返回游戏后若点击【人生重来一次】按钮回退，该物品将不会返还，使用物品后得到的附属物保留。<br>是否确认使用?";
+                                                document.getElementById("promote_title").innerHTML="【Alert】";
+                                                document.getElementById("promote_content").innerHTML="You are going to use "+res["title"+arg]+" in Archive【"+archiveID+"】. If you click【Back】, the item will not be returned, but the sub-product generated by using this item will keep. However. <br>Do you still want to use this item?";
+                                                //"您将使用Archive【"+archiveID+"】内的"+res["title"+arg]+"。返回游戏后若点击【Back】按钮回退，该物品将不会返还，使用物品后得到的附属物保留。<br>是否确认使用?";
                                                 document.getElementById("promote_cancel_btn").onclick=(function(){
                                                     $("#promote_window_whole").toggle();
                                                 })
@@ -408,8 +411,8 @@ $(document).ready(function (){
                         remainTimes=getDailyValue("lucky_draw",dateString,0);
                         //console.log("remianTimes:"+remainTimes);
                         $("#promote_window_whole").toggle();
-                        document.getElementById("promote_title").innerHTML="【Lucky Draw 提示】";
-                        document.getElementById("promote_content").innerHTML="你好哇，欢迎来到图鉴抽奖区，今日全游戏剩余免费抽卡次数：【"+remainTimes+"】。抽取物品将存入存档【"+archiveID+"】内，您可通过导航条【存档】键切换存档。<br>是否使用一次免费机会抽卡?";
+                        document.getElementById("promote_title").innerHTML="【Lucky Draw】";
+                        document.getElementById("promote_content").innerHTML="Hi, welcome to the Draw Area. You have 【"+remainTimes+"】free draw(s) left today. The rewards will be saved in to Archive【"+archiveID+"】. <br>Are you sure to use one free chance to draw now?";
                         document.getElementById("promote_cancel_btn").onclick=(function(){
                             $("#promote_window_whole").toggle();
                         })
@@ -420,8 +423,8 @@ $(document).ready(function (){
                                 useProduct("normal","none@0");
                             }
                             else{
-                                document.getElementById("hint_title").innerHTML="【Lucky Draw 提示】";
-                                document.getElementById("hint_content").innerHTML="对不起，您今日抽卡次数不足，明天再来。或可选择和PP在一起获得无限次抽卡机会( •̀ ω •́ )y";
+                                document.getElementById("hint_title").innerHTML="【Lucky Draw】";
+                                document.getElementById("hint_content").innerHTML="Sorry, you have used up today's free draws. You can come tomorrow."
                                 $("#hint_window_whole").toggle();
                             }
                             
@@ -514,14 +517,14 @@ $(document).ready(function (){
                                 total_consum=parseInt(response["money"+_index])*val;
                                 _pp_money=getMoney();
                                 if (_pp_money<total_consum){
-                                    document.getElementById("hint_title").innerHTML="【购物提示】";
-                                    document.getElementById("hint_content").innerHTML="抱歉，您存档【"+archiveID+"】内金钱值不足，请继续游戏获得金钱再来购买┭┮﹏┭┮";
+                                    document.getElementById("hint_title").innerHTML="【Shopping Confirmation】";
+                                    document.getElementById("hint_content").innerHTML="Sorry，there is not enough money in Archive【"+archiveID+"】. Maybe you can continue the game to gain more money and the come back┭┮﹏┭┮";
                                     $("#hint_window_whole").toggle();
                                 }
                                 else{
                                     $("#promote_window_whole").toggle();
-                                    document.getElementById("promote_title").innerHTML="【购物提示】";
-                                    document.getElementById("promote_content").innerHTML="您将消耗存档【"+archiveID+"】内的"+total_consum+"点金钱值购买"+val+"件【"+response["title"+_index]+ "】。返回游戏后若点击【人生重来一次】按钮回退，该部分金钱将不会返还，物品保留，但可能因此进入破产剧情线。<br>是否确认购买?";
+                                    document.getElementById("promote_title").innerHTML="【Shopping Confirmation】";
+                                    document.getElementById("promote_content").innerHTML="You are going to consume " +total_consum+ " Money in【"+archiveID+"】to buy"+val+" 【"+response["title"+_index]+ "】. If you click【Back】, money will not be returned, but the product pursued now will keep. However, you may go into the bankrupt storyline and fail the game. <br>Do you still want to buy them?";
                                     document.getElementById("promote_cancel_btn").onclick=(function(){
                                         $("#promote_window_whole").toggle();
                                     })
@@ -530,8 +533,8 @@ $(document).ready(function (){
                                             changeMoney(total_consum);
                                             addProductAmount(val,response["title"+_index]);
                                             $("#promote_window_whole").toggle();
-                                            document.getElementById("hint_title").innerHTML="【谢谢光临】";
-                                            document.getElementById("hint_content").innerHTML="购买成功！存档【"+archiveID+"】新增物品："+response["title"+_index]+ "。<br>ps:返回游戏后若点击【人生重来一次】按钮回退，该部分金钱将不会返还，物品保留，但可能因此进入破产剧情线。";
+                                            document.getElementById("hint_title").innerHTML="【Thank you】";
+                                            document.getElementById("hint_content").innerHTML="Shopping Sucess! New items " +response["title"+_index]+" in Archive【"+archiveID+"】 .<br>ps:If you click【Back】, money will not be returned, but the product pursued now will keep. However, you may go into the bankrupt storyline and fail the game.";
                                             $("#hint_window_whole").toggle();
                                         }
                                     }(val,_index,total_consum,response))
@@ -825,8 +828,8 @@ $(document).ready(function (){
                                 $("#new_tag").toggle();
                                 document.getElementById("SC_over_all_icon").style.display="none";
                             })
-                            document.getElementById("hint_title").innerHTML="【抽奖结果】";
-                            document.getElementById("hint_content").innerHTML="恭喜您获得1张"+prores["rank"]+"级别新图鉴“"+prores["title"]+"”，将存入存档【"+archiveID+"】，可在【图鉴】页面查看。";
+                            document.getElementById("hint_title").innerHTML="【Lucky Draw Result】";
+                            document.getElementById("hint_content").innerHTML="Congratulations! You got one Fancy Card "+prores["title"]+ " at rank "+prores["rank"]+". It will be saved into Archive【"+archiveID+"】. You can see them in the Fancy Card page.";
                             $("#hint_window_whole").toggle();
                     break;
                     case "money":
@@ -844,13 +847,13 @@ $(document).ready(function (){
                                 $("#new_money_over").toggle();
                                 document.getElementById("SC_over_all_icon").style.display="none";
                             })
-                            document.getElementById("hint_title").innerHTML="【抽奖结果】";
-                            document.getElementById("hint_content").innerHTML="恭喜您获得"+prores["money"]+"点金钱值，将存入存档【"+archiveID+"】。";
+                            document.getElementById("hint_title").innerHTML="【Lucky Draw Result】";
+                            document.getElementById("hint_content").innerHTML="Conratulations! You get "+prores["money"]+"Money. It will be saved into Archive【"+archiveID+"】。";
                             $("#hint_window_whole").toggle();
                     break;
                     case "none":
-                            document.getElementById("hint_title").innerHTML="【抽奖结果】";
-                            document.getElementById("hint_content").innerHTML="很遗憾，您什么都没得到。";
+                            document.getElementById("hint_title").innerHTML="【Lucky Draw Result】";
+                            document.getElementById("hint_content").innerHTML="Sorry, you got nothing......";
                             $("#hint_window_whole").toggle();
                     break;
                 }

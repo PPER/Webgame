@@ -28,9 +28,9 @@ var dir={
     figDirCenter: rootPath+ "image/figure/",
 };  
             
-var __currentArchiveId; //现在的存档标号
+var __currentArchiveId; //现在的Archive标号
 var enterStoryMark=0; //最初进入故事
-var specialSaveSenMark=0; //如果存档的时候刚好是record或者按钮相关，把它变成1，然后下次load specialSaveSenNum
+var specialSaveSenMark=0; //如果Archive的时候刚好是record或者按钮相关，把它变成1，然后下次load specialSaveSenNum
 var repoStatus;
 var specialSaveSenNum;
 var curWordsRepo;
@@ -89,7 +89,7 @@ var newPersonRepo={};
                                 characterInterval=chaVal;
                                 sentenceInterval=senVal;
                                 document.getElementById("hint_title").innerHTML="【System Prompt】";
-                                document.getElementById("hint_content").innerHTML="更改成功！";
+                                document.getElementById("hint_content").innerHTML="Success!！";
                                 $("#hint_window_whole").toggle();
                             },
                             error:function () {
@@ -168,7 +168,7 @@ var newPersonRepo={};
         this.AddMoney=function(num){this.money+=num;}
         this.DelMoney=function(num){this.money-=num;}
     }
-    //读取存档号
+    //读取Archive号
     $.ajax({
         url: '/moment/read_archive_id/',
         type: 'post',
@@ -270,9 +270,9 @@ var newPersonRepo={};
     //记录弹出，回到上一级文件
     function popRecord(){
         document.getElementById('mCSB_1_container').innerHTML=" ";
-        document.getElementById("contact_name").innerHTML="【系统消息】";
+        document.getElementById("contact_name").innerHTML="【NPC】";
         msg = $("<div>").addClass("message");
-        msg.text("此为聊天窗口，右上角气泡按钮可展开通讯录。此为系统消息，回复无效。");
+        msg.text("Here is the chat box. You can click the bubble on the top right to unfold the address book. This is system message, pleas do not reply. Thank you.");
         msg.appendTo($('.mCSB_container'));
         document.getElementById("profile_avatar").src="/static/moment/image/setting_dir/profile_phote.jpg";//默认avatar
         contactName="";
@@ -507,11 +507,11 @@ var newPersonRepo={};
         });
     }
 
-    //初始化有存档的story
+    //初始化有Archive的story
     function initialRecordStory(){
         document.getElementById("story_words").innerHTML=" ";
         document.getElementById("film_content").innerHTML=" ";
-        if (Record.length>=1)document.getElementById("buttonBack").innerHTML="人生重来一次";
+        if (Record.length>=1)document.getElementById("buttonBack").innerHTML="Back";
         if (Record.length<1){
             document.getElementById("buttonBack").innerHTML="No Back";
         }
@@ -601,7 +601,7 @@ var newPersonRepo={};
         //清空
         document.getElementById("story_words").innerHTML=" ";
         document.getElementById("film_content").innerHTML=" ";
-        if (Record.length>=1)document.getElementById("buttonBack").innerHTML="人生重来一次";
+        if (Record.length>=1)document.getElementById("buttonBack").innerHTML="Back";
         if (Record.length<1){
             document.getElementById("buttonBack").innerHTML="No Back";
         }
@@ -619,7 +619,7 @@ var newPersonRepo={};
         curSenNum=num;
         document.getElementById("story_words").innerHTML=" ";
         document.getElementById("film_content").innerHTML=" ";
-        if (Record.length>=1)document.getElementById("buttonBack").innerHTML="人生重来一次";
+        if (Record.length>=1)document.getElementById("buttonBack").innerHTML="Back";
         if (Record.length<1){
             document.getElementById("buttonBack").innerHTML="No Back";
         }
@@ -793,15 +793,15 @@ var newPersonRepo={};
         hint.style.fontWeight="300";
         switch(curWordsRepo[curSenNum][1]){
             case "m":
-                hint.innerHTML="[System Prompt]  您收到了一条新消息。"+curWordsRepo[curSenNum].slice(2);
+                hint.innerHTML="[System Prompt]  You have got a new message! 。"+curWordsRepo[curSenNum].slice(2);
                 hint.style.color="#005757";
                 break;
             case "p":
-                hint.innerHTML="[System Prompt]  角色属性改变："+curWordsRepo[curSenNum].slice(2);
+                hint.innerHTML="[System Prompt]  Attribute Values change. ："+curWordsRepo[curSenNum].slice(2);
                 hint.style.color="#E65540";
                 break;
             case "t":
-                hint.innerHTML="[System Prompt]  获得新成就："+curWordsRepo[curSenNum].slice(2);
+                hint.innerHTML="[System Prompt]  New："+curWordsRepo[curSenNum].slice(2);
                 hint.style.color="#484891";
                 break;
         }
@@ -1043,7 +1043,7 @@ var newPersonRepo={};
                     }
                 })
                 document.getElementById("hint_title").innerHTML="【System Prompt】";
-                document.getElementById("hint_content").innerHTML="新成就达成( •̀ ω •́ )y 恭喜您获得1张"+prores["rank"]+"级别新图鉴“"+prores["title"]+"”，已存入本存档，可在【成就与商店】->【图鉴】页面查看。";
+                document.getElementById("hint_content").innerHTML="New Achievement( •̀ ω •́ )y Congratulations! You got 1 "+prores["title"]+" at Rank"+prores["rank"]+". It has been saved in this Archive, you can check it on【Achievement and Store】->【Fancy Card】.";
                 $("#hint_window_whole").toggle();
             },
             error:function () {
@@ -1346,7 +1346,7 @@ document.getElementById("buttonBack").onclick=(function(){
     if(Record.length>0)popRecord();
 });
 
-//存档
+//Archive
 function saveArch(){
     if (specialSaveSenMark==0)currentSentenceNumberValue=curSenNum-1;//因为每次点击出来都会+1
     else currentSentenceNumberValue=specialSaveSenNum;
@@ -1410,7 +1410,7 @@ function saveArch(){
 document.getElementById("buttonSave").onclick=(function(){
     $("#promote_window_whole").toggle();
     document.getElementById("promote_title").innerHTML="【System Prompt】";
-    document.getElementById("promote_content").innerHTML="您的存档已自动保存，\n点击【确定】前往存档馆（可切换存档） \n点击【取消】继续游戏( •̀ ω •́ )y";
+    document.getElementById("promote_content").innerHTML="Saved Success! \nClick【Confirm】to change Archive. \nClick【Cancel】to continue the game( •̀ ω •́ )y";
     document.getElementById("promote_cancel_btn").onclick=(function(){
         $("#promote_window_whole").toggle();
         saveArch();
@@ -1467,8 +1467,8 @@ document.getElementById("onlySave").onclick=(function(){
 //logout
 document.getElementById("buttonLogout").onclick=(function(){
     $("#promote_window_whole").toggle();
-    document.getElementById("promote_title").innerHTML="【登出提示】";
-    document.getElementById("promote_content").innerHTML="您将退出游戏，本存档将自动保存。若继续游戏请点击【取消】( •̀ ω •́ )y";
+    document.getElementById("promote_title").innerHTML="【Logout】";
+    document.getElementById("promote_content").innerHTML="You are going to exit the game, the record has been saved. If you want to continue the game, please click the button【Cancel】( •̀ ω •́ )y";
     document.getElementById("promote_cancel_btn").onclick=(function(){
         $("#promote_window_whole").toggle();
     })

@@ -11,59 +11,7 @@ from django import forms
 from django.views.generic.edit import CreateView
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
-'''
-from captcha.models import CaptchaStore
-from captcha.helpers import captcha_image_url
-from captcha.fields import CaptchaField
-'''
-# ...
 NOWPATH=os.path.abspath('.')
-
-""" 
-class CaptchaTestForm(forms.Form):
-    captcha = CaptchaField() """
-
-""" class AjaxExampleForm(CreateView):
-    template_name = "moment/login.html"
-    form_class = AjaxForm
-
-    def form_invalid(self, form):
-        if self.request.is_ajax():
-            to_json_response = dict()
-            to_json_response['status'] = 0
-            to_json_response['form_errors'] = form.errors
-
-            to_json_response['new_cptch_key'] = CaptchaStore.generate_key()
-            to_json_response['new_cptch_image'] = captcha_image_url(to_json_response['new_cptch_key'])
-
-            return HttpResponse(json.dumps(to_json_response), content_type='application/json')
-
-    def form_valid(self, form):
-        form.save()
-        if self.request.is_ajax():
-            to_json_response = dict()
-            to_json_response['status'] = 1
-
-            to_json_response['new_cptch_key'] = CaptchaStore.generate_key()
-            to_json_response['new_cptch_image'] = captcha_image_url(to_json_response['new_cptch_key'])
-
-            return HttpResponse(json.dumps(to_json_response), content_type='application/json') """
-
-""" def some_view(request):
-    if request.POST:
-        form = CaptchaTestForm(request.POST)
-
-        # Validate the form: the captcha field will automatically
-        # check the input
-        if form.is_valid():
-            human = True
-            return HttpResponse(form.cleaned_data) # 这里没有建立模型，如果成功则直接打印
-        else:
-            return HttpResponse('validate error')
-    else:
-        form = CaptchaTestForm()
-
-    return render('login1.html',locals())  """
 
 @csrf_exempt
 def verify(request):
@@ -94,9 +42,9 @@ def register(request):
         archive_2=Story_File_Status.objects.create(user=user,archive_id=2)
         archive_3=Story_File_Status.objects.create(user=user,archive_id=3)
         Daily_Story_File_Status.objects.create(user=user,title="lucky_draw")
-        Wonder_Archive_People.objects.create(whether_user=1,story_file_status=archive_1,name="PP",full_name="Zoe")
-        Wonder_Archive_People.objects.create(whether_user=1,story_file_status=archive_2,name="PP",full_name="Zoe")
-        Wonder_Archive_People.objects.create(whether_user=1,story_file_status=archive_3,name="PP",full_name="Zoe")
+        Wonder_Archive_People.objects.create(whether_user=1,story_file_status=archive_1,name="PP",full_name="Zoe",health=100,love=100,money=5000)
+        Wonder_Archive_People.objects.create(whether_user=1,story_file_status=archive_2,name="PP",full_name="Zoe",health=100,love=100,money=5000)
+        Wonder_Archive_People.objects.create(whether_user=1,story_file_status=archive_3,name="PP",full_name="Zoe",health=100,love=100,money=5000)
         Current_Archive.objects.create(user=user,archive_id=3)
         login(request,user)
         return HttpResponse( json.dumps( {"msg":"ok"} ) )
@@ -116,7 +64,7 @@ def story(request):
     template = loader.get_template('moment/story.html')
     return HttpResponse(template.render(response_data, request))
 
-#获得存档id#
+#获得Archiveid#
 @csrf_exempt
 def read_archive_id(request):
     user=request.user
@@ -126,7 +74,7 @@ def read_archive_id(request):
         data["archive_id"]=archive.archive_id
         return HttpResponse( json.dumps(data) )
 
-#更改存档id#
+#更改Archiveid#
 @csrf_exempt
 def define_archive_id(request):
     user=request.user
@@ -154,7 +102,7 @@ def galcate(request):
         active_value=archive.active_value
         if active_value==1:
             whether_load["whether_load"+"%d"%load_index]="LOAD"
-            whether_load["whether_load_hint"+"%d"%load_index]=archive.date+" 存档"
+            whether_load["whether_load_hint"+"%d"%load_index]=archive.date+" Archive"
             whether_load["whether_load_content"+"%d"%load_index]=archive.last_sentence
         if active_value==0:
             whether_load["whether_load"+"%d"%load_index]="CREAT"
@@ -188,7 +136,7 @@ def galcate(request):
     template = loader.get_template('moment/galcate.html')
 
     return HttpResponse(template.render(whether_load, request)) """
-#存档记录#
+#Archive记录#
 @csrf_exempt
 def savearchive(request):
     user=request.user
@@ -672,7 +620,7 @@ def archive_GT_NC(request):
         obj_chat, created_chat = Chat_Log.objects.get_or_create(story_file_status=archive,chat_person=person)
         response={}
         if created_chat:
-            obj_chat.content="@ohello，我是"+person.full_name+"。很高兴认识你。"
+            obj_chat.content="@ohello，I‘m "+person.full_name+". How are you?"
             obj_chat.update_state=0
             response["msg"]="created"
         else :

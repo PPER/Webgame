@@ -60,7 +60,7 @@ $("#phone").click(function () {
   else {
     document.getElementById('mCSB_1_container').innerHTML=" ";
     msg = $("<div>").addClass("message");
-    msg.text("此为聊天窗口，右上角气泡按钮可展开通讯录。此为系统消息，回复无效。");
+    msg.text("Here is the chat box. You can click the bubble on the top right to unfold the address book. This is system message, pleas do not reply. Thank you.");
     msg.appendTo($('.mCSB_container'));
   }
   $("#phone_window").fadeIn(300);
@@ -119,7 +119,7 @@ function flushChatCircle(){
           _name=response["unread_name"+i];
           if(response["update_state"+i]==0){
             _mark=0;
-            document.getElementById("unread"+_name).innerHTML="【未读】";
+            document.getElementById("unread"+_name).innerHTML="【Unread】";
           }
           else document.getElementById("unread"+_name).innerHTML="";
         }
@@ -145,8 +145,8 @@ function generate_contact(){
         response=JSON.parse(res);
         _amount=response.contact_amount;
         if (_amount==0 && initialGenMark==1){
-          document.getElementById("hint_title").innerHTML="【通讯录提示】";
-          document.getElementById("hint_content").innerHTML="您暂未遇到任何角色，好友联系方式暂未激活。请继续游戏解锁【通讯录】功能。";
+          document.getElementById("hint_title").innerHTML="【System Prompt】";
+          document.getElementById("hint_content").innerHTML="Empty! You haven't unlocked any characters. Please continue the game to unlock 【Address book】.";
           $("#hint_window_whole").toggle();
         }else{
             contact_name_list=document.getElementById("contact_name_list");

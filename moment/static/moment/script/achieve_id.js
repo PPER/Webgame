@@ -20,7 +20,7 @@ $(document).ready(function (){
         window.location.href="../story/";
     });
 
-    //读取存档号
+    //读取Archive号
     function upadateAchieveId(){
         $.ajax({
             url: '/moment/define_archive_id/',
@@ -40,8 +40,8 @@ $(document).ready(function (){
     //logout
     document.getElementById("galcate_logout").onclick=(function(){
         $("#promote_window_whole").toggle();
-        document.getElementById("promote_title").innerHTML="【登出提示】";
-        document.getElementById("promote_content").innerHTML="您将退出游戏。若想继续游戏请点击【取消】( •̀ ω •́ )y";
+        document.getElementById("promote_title").innerHTML="【Logout】";
+        document.getElementById("promote_content").innerHTML="You are going to exit the game, the record has been saved. If you want to continue the game, please click the button【Cancel】( •̀ ω •́ )y";
         document.getElementById("promote_cancel_btn").onclick=(function(){
         $("#promote_window_whole").toggle();
     })

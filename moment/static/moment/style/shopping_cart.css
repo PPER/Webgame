@@ -1,7 +1,7 @@
 .shopping_cart{
     position: relative;
-    width: 400px;
-    height: 450px;
+    width: 500px;
+    height: 550px;
     border-radius: 20px;
     background: white;
     border: 2px solid black;
@@ -97,7 +97,7 @@
 
 .add_cart{
     height: 60%;
-    width: 40%;
+    width: 50%;
     margin-top: auto;
     margin-bottom: auto;
     margin-left: auto;

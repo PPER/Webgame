@@ -91,16 +91,16 @@ $(document).ready(function(){
 
     //攻略
     document.getElementById("nav_guid").onclick=(function(){
-        document.getElementById("hint_title").innerHTML="【攻略】";
-        document.getElementById("hint_content").innerHTML="【关于游戏】<br>1.Loading时间可能较长，加快速度，下次进入前不要清浏览器缓存;<br>2.退出游戏前请点击【保存】or【退出游戏】，不要直接关闭浏览器。游戏会每隔5min自动保存，但是直接退出会造成进度不follow。<br>【其他】<br>1.由于内置bug，点击【人生重来一次】，图鉴不会被收回，该bug可能在下一版本修复;<br>2.商店里的卡们期望都是正的;<br>3.每天有2次抽卡机会，在【成就与商店】->【商店】的右侧第三个按钮;<br>4.名片的名字是个超链接，可以点开看属性;<br>5.选择符合历史的选择支可以获得更多奖励，有些选择支会自动回归到另一个保证剧情流畅。";
+        document.getElementById("hint_title").innerHTML="【Guid】";
+        document.getElementById("hint_content").innerHTML="【About Game】<br>1.It may take a while for loading. To speed up the game, it's better not to clear the browser cache;<br>2.Please click the 【Logout】 or 【Save】 before exiting the game. Though the game will auto-save for every 5 minutes, but you may lose part of records if you close the browser directly. <br>【Others】<br>1.If you click【Back】. Fancy Card obtained before clicking may not be deleted. The developer will fix it in further version. <br>2.The Card product in the store all have positive expectation, so it's worthy to buy them. <br>3.You have 2 chances to lucky draw every day. You can see it in【Achievement】->【Store】->the third button on the right;<br>4.There is hyperlink on Namecards, you can click them. <br>5.Some branch selections lead to different storylines, but they may or may not return to the same story line.";
         $("#hint_window_whole").toggle();
     })
 
     //logout
     document.getElementById("nav_log_out").onclick=(function(){
         $("#promote_window_whole").toggle();
-        document.getElementById("promote_title").innerHTML="【登出提示】";
-        document.getElementById("promote_content").innerHTML="您将退出游戏，本存档将自动保存。若继续游戏请点击【取消】( •̀ ω •́ )y";
+        document.getElementById("promote_title").innerHTML="【Logout】";
+        document.getElementById("promote_content").innerHTML="You are going to exit the game, the record has been saved. If you want to continue the game, please click the button【Cancel】( •̀ ω •́ )y";
         document.getElementById("promote_cancel_btn").onclick=(function(){
             $("#promote_window_whole").toggle();
         })
