@@ -5,7 +5,7 @@ $.ajaxSetup({
 var imageSrcs = [];
 var images = [];
 var loadSucessRepo=[];
-var fileDirUrl="/static/moment/story/1";
+var fileDirUrl="/static/moment/story/1_eng";
 function tryCallback(callback) {
     var allImagesLoaded = (function(){
         for (var i = images.length; i--;) {

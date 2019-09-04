@@ -12,8 +12,7 @@ function backLoadImages() {
 
 function backLoadRepo(){
     var dirUrlRoot="/static/moment/story/";
-    for (i=2;i<5;i++){
-        fileDir=dirUrlRoot+i;
+        fileDir=dirUrlRoot+"2_eng";
         $.ajax({url: fileDir,async:true, success: function(content){
             allRepo = content.split("\n");
             for (var i=0;i<allRepo.length;i++){
@@ -41,6 +40,6 @@ function backLoadRepo(){
           }});
 
 }
-}
+
 // then to call it, you would use this
 backLoadRepo();

@@ -57,7 +57,7 @@ iPIG
 vYou can also create a character without introduction page popping out.
 c 
 fc/static/moment/image/figure/YJQ/19.png
-@PAL#TURTLEDOVE#Zoey#Singer#100#150#100#/static/moment/image/figure/YJQ/10.png#A pop singer in University of Michigan. She is outgoing and willing to help others. Hence, she has a lot of friends. #/static/moment/image/figure/YJQ/avatar.png#/static/moment/image/pic/places/IMG_2685.JPG
+@PAL#TURTLEDOVE#Zoey#Singer#100#150#100#/static/moment/image/figure/YJQ/10.png#A pop singer in University of Michigan. She is outgoing and willing to help others. Hence, she has a lot of friends. #/static/moment/image/figure/YJQ/avatar.png#/static/moment/image/pic/places/IMG_2686.jpg
 vA new character created.  Name: Zoey; Position: Singer; Health:100; Love:150; Money:100; Introduction:A pop singer in University of Michigan. She is outgoing and willing to help others. Hence, she has a lot of friends.
 C
 vYou can set character to talk to users. Users can also talk to characters by clicking the second button on the top right. Though they may not reply :) I'm working on the auto-reply API and self-reply feature. 
