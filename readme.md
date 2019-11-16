@@ -46,8 +46,8 @@ Story related files are in ```story``` directory. This directory includes the fo
 #### Basic setting
 + Invite code in login page： default value is ```wsfw```, you can change it in ```view.py```
 ## Syntax
-##### Basic Mode
-###### Pictures
+### Basic Mode
+#### Pictures
 + Change background pictures：`b[background_url]`
 e.g. `b/static/moment/image/pic/back.jpg`
 + Change left figure picture：`fl[left_figure_url]`
@@ -55,16 +55,16 @@ e.g. `b/static/moment/image/pic/back.jpg`
 + Change middle figure picture：`fl[right_figure_url]`
 + Hide figure picture：`f[the location of figure]n`
 e.g Hide middle figure picture `fcn`
-###### Text
+#### Text
 + Word：`v[the word of characters]`
 + Nametag of characters: `t[character name]`
 + Prompt sentence
 Change property `!p[ the prompt sentence for changing property]`
 New message `!m[the prompt sentence for message]`
-###### Audio
+#### Audio
 + Background audio：`s[the path of background audio]`
 + Other audios：`S[the path of audio]`
-###### Branch to new story
+#### Branch to new story
 + Define branches：
 ```
 a[The number of brances]
@@ -90,7 +90,7 @@ tEmma
 vHello, I'm Emma.
 C
 ```
-##### Message Box
+#### Message Box
 + Send a message from characters.
 ```
 m[human name]
@@ -101,7 +101,7 @@ m[human name]
 m[human name]
 u[message contens]
 ```
-##### Change characters property
+#### Change characters property
 ```
 r[total line number for this command set]
 *[human name 1]
@@ -125,7 +125,7 @@ l-30
 m+50
 *e
 ```
-##### Create Game Element
+#### Create Game Element
 + Create Game Characters
 ```@[human name（system name）]#[title]#[full name]#[simple introduction]#[health]#[love]#[money]#[figure picture path]#[detailed introduction]#[profile picture path]#[background picture path]```
 e.g ```@EM#roommate2#Emma#A smiling girl#100#100#100#/static/moment/image/figure/XRQ/2.png#A student in Shanghai Jiao Tong University#/static/moment/image/figure/XRQ/avatar.png#/static/moment/image/pic/places/IMG_2685.JPG```
@@ -134,15 +134,15 @@ e.g ```@EM#roommate2#Emma#A smiling girl#100#100#100#/static/moment/image/figure
 e.g.
 ```$/static/moment/image/pic/places/nonsjtu/IMG_3040.JPG#Basketball Game#Intersting Basketball Game with Emma!#I played basketball with Emma Today.....#Emma#happy#fun#sports```
 
-##### Film Mode
+### Film Mode
 Note: film mode start with `cf`tag，and end with `Cf`tag. The following commands can be included between these two tags.
 + Change background pictures：`ff[background_url]`
   e.g. `b/static/moment/image/pic/back.jpg`
 + Text：`v)[text content]`
-#### Attention
+### Attention
 + Every file can be considered as a paragraph for a novel. Don't add a ```\n``` at the end of the file (the last line of story file is not empty).
 
-#### Admin Management
+## Admin Management
 Go to http://[ip]/admin
 + Default login account username：admin password：123456
 + Create admin user
@@ -156,10 +156,8 @@ Go to http://[ip]/admin
     MOMENT -> Daily_ story_ file_ statuss
 
 
-
-
 ## Browser
-Only for Chrome
+Only support Chrome now.
 
 ## Troble Shooting
 [Trouble_Shooting](https://github.com/PPER/Webgame/wiki/Trouble-Shooting)
