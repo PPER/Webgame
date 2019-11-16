@@ -45,7 +45,7 @@ Story related files are in ```story``` directory. This directory includes the fo
 + File```preload```: Speed up the loading speed of pictures. You can copy pictures address into this file (especially pictures in chapter 1). It will recognize ```/static/*/png``` or ```jpg``` pattern automatically. 
 #### Basic setting
 + Invite code in login page： default value is ```wsfw```, you can change it in ```view.py```
-#### Introduction to development syntax
+## Syntax
 ##### Basic Mode
 ###### Pictures
 + Change background pictures：`b[background_url]`
